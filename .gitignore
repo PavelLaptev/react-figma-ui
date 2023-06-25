@@ -1,0 +1,9 @@
+node_modules
+build-storybook.log
+.env
+
+# MACOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
