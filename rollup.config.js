@@ -6,8 +6,8 @@ import json from '@rollup/plugin-json'
 import dts from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'
-import { terser } from 'rollup-plugin-terser'
 import filesize from 'rollup-plugin-filesize'
+import { terser } from 'rollup-plugin-terser'
 
 export default [
   {
@@ -20,10 +20,7 @@ export default [
         sourcemap: true
       }
     ],
-    external: [
-      'react',
-      'react-dom',
-    ],
+    external: ['react', 'react-dom'],
     plugins: [
       peerDepsExternal(),
       resolve(),
