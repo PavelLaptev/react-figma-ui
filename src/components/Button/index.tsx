@@ -5,11 +5,12 @@ import React, {
   KeyboardEvent
 } from 'react'
 
+import { LoadingIndicator } from '../LoadingIndicator'
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
 export interface ButtonProps {
-  children: ReactNode
+  label: string
   danger?: boolean
   disabled?: boolean
   fullWidth?: boolean
@@ -45,7 +46,9 @@ export const Button = (props: ButtonProps) => {
       )}
     >
       {props.loading === true ? (
-        <div className={styles.loadingIndicator}>loading…</div>
+        <div className={styles.loadingIndicator}>
+          <LoadingIndicator />
+        </div>
       ) : null}
       <button
         disabled={props.disabled === true}
@@ -61,7 +64,9 @@ export const Button = (props: ButtonProps) => {
         }
         tabIndex={props.disabled === true ? -1 : 0}
       >
-        <div className={styles.children}>{props.children}</div>
+        <div className={styles.children}>
+          <span>{props.label}</span>
+        </div>
       </button>
     </div>
   )
