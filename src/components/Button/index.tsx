@@ -1,16 +1,77 @@
-import React from 'react'
-import styles from './styles.module.scss'
+import React, {
+  MouseEventHandler,
+  ReactNode,
+  useCallback,
+  KeyboardEvent
+} from 'react'
 
-export interface ButtonIProps {
-  className?: string
+import { joinClassNames } from '../../utils/joinClassNames'
+import styles from './styles.module.css'
+
+export interface ButtonProps {
+  children: ReactNode
+  danger?: boolean
+  disabled?: boolean
+  fullWidth?: boolean
+  loading?: boolean
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  propagateEscapeKeyDown?: boolean
+  secondary?: boolean
 }
 
-const Button = (props: ButtonIProps) => {
-  return <button>hello</button>
+export const Button = (props: ButtonProps) => {
+  const handleKeyDown = useCallback(
+    function (event: KeyboardEvent<HTMLButtonElement>): void {
+      if (event.key !== 'Escape') {
+        return
+      }
+      if (props.propagateEscapeKeyDown === false) {
+        event.stopPropagation()
+      }
+      event.currentTarget.blur()
+    },
+    [props.propagateEscapeKeyDown]
+  )
+
+  return (
+    <div
+      className={joinClassNames(
+        styles.button,
+        props.secondary === true ? styles.secondary : styles.default,
+        props.danger === true ? styles.danger : null,
+        props.fullWidth === true ? styles.fullWidth : null,
+        props.disabled === true ? styles.disabled : null,
+        props.loading === true ? styles.loading : null
+      )}
+    >
+      {props.loading === true ? (
+        <div className={styles.loadingIndicator}>loading…</div>
+      ) : null}
+      <button
+        disabled={props.disabled === true}
+        onClick={
+          props.disabled === true || props.loading === true
+            ? undefined
+            : props.onClick
+        }
+        onKeyDown={
+          props.disabled === true || props.loading === true
+            ? undefined
+            : handleKeyDown
+        }
+        tabIndex={props.disabled === true ? -1 : 0}
+      >
+        <div className={styles.children}>{props.children}</div>
+      </button>
+    </div>
+  )
 }
 
 Button.defaultProps = {
-  className: ''
-} as Partial<ButtonIProps>
-
-export default Button
+  danger: false,
+  disabled: false,
+  fullWidth: false,
+  loading: false,
+  propagateEscapeKeyDown: true,
+  secondary: false
+}

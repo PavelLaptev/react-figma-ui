@@ -4,7 +4,8 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    'storybook-dark-mode'
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -12,6 +13,9 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag'
+  },
+  core: {
+    builder: '@storybook/builder-webpack5'
   }
 }
 export default config

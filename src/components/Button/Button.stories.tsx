@@ -1,19 +1,37 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import { Button } from '..'
+// Button.stories.ts|tsx
 import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: 'Forms/Button',
+import { Button } from './'
+
+const meta: Meta<typeof Button> = {
   component: Button
+}
 
-  // More on argss: https://storybook.js.org/docs/react/api/argss
-} as ComponentMeta<typeof Button>
+export default meta
+type Story = StoryObj<typeof Button>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+/*
+ *👇 Render functions are a framework specific feature to allow you control on how the component renders.
+ * See https://storybook.js.org/docs/react/api/csf
+ * to learn how to use render functions.
+ */
+export const Primary: Story = {
+  render: () => <Button>Primary</Button>
+}
 
-export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {}
+export const Secondary: Story = {
+  render: () => <Button secondary>Secondary</Button>
+}
+
+export const Danger: Story = {
+  render: () => <Button danger>Danger</Button>
+}
+
+export const Disabled: Story = {
+  render: () => <Button disabled>Disabled</Button>
+}
+
+export const Loading: Story = {
+  render: () => <Button loading>Loading</Button>
+}
