@@ -19,7 +19,7 @@ export const Stack = (props: StackProps) => {
       className={joinClassNames(
         styles.stack,
         props.className,
-        props.hasLeftRightPadding && styles.lieftRightPadding,
+        props.hasLeftRightPadding && styles.leftRightPadding,
         props.hasTopBottomPadding && styles.topBottomPadding
       )}
       style={{

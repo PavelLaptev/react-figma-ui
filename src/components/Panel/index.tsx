@@ -17,7 +17,7 @@ export const Panel = (props: PanelProps) => {
       className={joinClassNames(
         styles.panel,
         props.className,
-        props.hasLeftRightPadding && styles.lieftRightPadding,
+        props.hasLeftRightPadding && styles.leftRightPadding,
         props.hasTopBottomPadding && styles.topBottomPadding
       )}
       style={props.style}
@@ -29,5 +29,5 @@ export const Panel = (props: PanelProps) => {
 
 Panel.defaultProps = {
   hasLeftRightPadding: true,
-  hasTopBottomPadding: false
+  hasTopBottomPadding: true
 }

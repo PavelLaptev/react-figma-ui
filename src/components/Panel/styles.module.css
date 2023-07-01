@@ -1,5 +1,14 @@
 .panel {
   width: 100%;
   border-bottom: 1px solid var(--figma-color-border);
-  padding: var(--space-extra-small) 0;
+}
+
+.leftRightPadding {
+  padding-left: var(--space-extra-small);
+  padding-right: var(--space-extra-small);
+}
+
+.topBottomPadding {
+  padding-top: var(--space-extra-small);
+  padding-bottom: var(--space-extra-small);
 }

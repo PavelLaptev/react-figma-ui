@@ -1,20 +1,15 @@
-.text {
-  padding-top: 1px;
-  color: var(--figma-color-text);
-  pointer-events: none;
-  transform: translateY(4px);
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--space-extra-small);
 }
 
-.numeric {
-  font-variant-numeric: tabular-nums;
+.title {
+  flex: 1;
 }
 
-.left {
-  text-align: left;
-}
-.center {
-  text-align: center;
-}
-.right {
-  text-align: right;
+.buttons {
+  display: flex;
 }

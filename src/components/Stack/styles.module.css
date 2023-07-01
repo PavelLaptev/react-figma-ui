@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-.lieftRightPadding {
+.leftRightPadding {
   padding-left: var(--space-extra-small);
   padding-right: var(--space-extra-small);
 }

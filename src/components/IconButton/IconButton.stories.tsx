@@ -9,17 +9,13 @@ const meta: Meta<typeof IconButton> = {
   component: IconButton
 }
 
-const defaultArgs = {
-  disabled: false
-}
-
 export default meta
 
 type Story = StoryObj<typeof IconButton>
 
 export const Default: Story = {
   args: {
-    ...defaultArgs,
+    disabled: false,
     children: <Icon name='scale' size='32' />
   }
 }
