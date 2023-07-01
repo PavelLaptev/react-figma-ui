@@ -58,6 +58,8 @@ div,
 span {
   cursor: default;
   user-select: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1,

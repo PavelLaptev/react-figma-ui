@@ -1,0 +1,5 @@
+.panel {
+  width: 100%;
+  border-bottom: 1px solid var(--figma-color-border);
+  padding: var(--space-extra-small) 0;
+}
