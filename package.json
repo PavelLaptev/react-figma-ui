@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A Figma UI components for React",
   "scripts": {
-    "build": "rimraf ui && rollup -c && cleancss -o ui/all.css styles/*.css ui/ui.css",
+    "build": "rimraf ui && rollup -c && cleancss -o ui/styles.css styles/*.css ui/ui.css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --auto-accept-changes --project-token"

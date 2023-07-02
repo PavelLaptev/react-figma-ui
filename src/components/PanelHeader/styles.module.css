@@ -20,6 +20,7 @@
 
 .title {
   flex: 1;
+  padding-left: var(--space-extra-small);
   transition: 0.1s color ease-out;
 }
 
