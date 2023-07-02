@@ -16,6 +16,7 @@ type Story = StoryObj<typeof IconButton>
 export const Default: Story = {
   args: {
     disabled: false,
+    isActive: false,
     children: <Icon name='scale' size='32' />
   }
 }

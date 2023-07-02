@@ -14,7 +14,10 @@ export type PanelHeaderProps = {
   isActive?: boolean
   onClick?: () => void
   iconButtons?: {
-    icon: string
+    icon: Icon16Type | Icon32Type
+    customIcon?: React.ReactNode
+    disabled?: boolean
+    isActive?: boolean
     onClick: () => void
   }[]
 }
@@ -22,7 +25,11 @@ export type PanelHeaderProps = {
 export const PanelHeader = (props: PanelHeaderProps) => {
   return (
     <div
-      className={joinClassNames(styles.panelHeader, props.className)}
+      className={joinClassNames(
+        styles.panelHeader,
+        props.className,
+        props.isActive && styles.isActive
+      )}
       style={{
         ...props.style
       }}
@@ -35,7 +42,7 @@ export const PanelHeader = (props: PanelHeaderProps) => {
         <div className={styles.buttons}>
           {props.iconButtons.map((iconButton, index) => (
             <IconButton key={index} onClick={iconButton.onClick}>
-              <Icon name={iconButton.icon} size='32' />
+              <Icon className={styles.icon} name={iconButton.icon} size='32' />
             </IconButton>
           ))}
         </div>

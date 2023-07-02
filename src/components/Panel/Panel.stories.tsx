@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Panel } from '.'
 import { Stack } from '../Stack'
-import { Text } from '../Text'
+import { PanelHeader } from '../PanelHeader'
 
 const meta: Meta<typeof Panel> = {
   component: Panel
@@ -17,7 +17,7 @@ const PanelContent = () => {
   return (
     <>
       <Stack>
-        <Text>Panel content</Text>
+        <PanelHeader title='Panel Header' />
       </Stack>
     </>
   )

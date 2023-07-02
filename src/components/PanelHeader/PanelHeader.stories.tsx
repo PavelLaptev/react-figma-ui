@@ -11,9 +11,24 @@ const meta: Meta<typeof PanelHeader> = {
 export default meta
 type Story = StoryObj<typeof PanelHeader>
 
-export const Default: Story = {
+export const WithTitleAndIcon: Story = {
   args: {
     title: 'Panel Header',
+    isActive: false,
+    iconButtons: [
+      {
+        icon: 'plus',
+        onClick: () => {
+          console.log('plus')
+        }
+      }
+    ]
+  }
+}
+
+export const WithIcon: Story = {
+  args: {
+    isActive: false,
     iconButtons: [
       {
         icon: 'plus',

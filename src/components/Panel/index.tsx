@@ -28,6 +28,6 @@ export const Panel = (props: PanelProps) => {
 }
 
 Panel.defaultProps = {
-  hasLeftRightPadding: true,
+  hasLeftRightPadding: false,
   hasTopBottomPadding: true
 }

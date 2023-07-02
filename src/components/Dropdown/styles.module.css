@@ -1,0 +1,21 @@
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-extra-small);
+  width: 100%;
+  height: 32px;
+  border-radius: var(--border-radius-2);
+  border: 1px solid transparent;
+  padding: 0 var(--space-extra-small);
+  transition: all 0.1s ease-in-out;
+}
+
+.dropdown:hover {
+  justify-content: space-between;
+  border-color: var(--figma-color-border);
+}
+
+.dropdownIcon {
+  fill: var(--figma-color-icon);
+}

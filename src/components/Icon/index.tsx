@@ -9,7 +9,7 @@ import styles from './styles.module.css'
 export interface IconProps {
   className?: string
   style?: React.CSSProperties
-  name: string
+  name: Icon16Type | Icon32Type
   size: '32' | '16'
   customIcon?: React.ReactNode
 }

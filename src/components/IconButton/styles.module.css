@@ -3,22 +3,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 2px solid transparent;
+  width: 32px;
+  height: 32px;
   border-radius: var(--border-radius-2);
 }
 
 .iconButton:not(:disabled) {
   color: var(--figma-color-icon);
 }
+
 .iconButton:not(:disabled):hover {
   background-color: var(--figma-color-bg-hover);
 }
-.iconButton:not(:disabled):focus {
-  border-color: var(--figma-color-border-brand-strong);
-}
+
 .iconButton:disabled {
   color: var(--figma-color-icon-disabled);
   cursor: not-allowed;
+}
+
+/* IS ACTIVE CLASSES */
+
+.isActive {
+  background-color: var(--figma-color-bg-brand);
+}
+
+.isActive svg {
+  fill: var(--figma-color-icon-onbrand);
+}
+
+.isActive:not(:disabled):hover {
+  background-color: var(--figma-color-bg-brand);
 }

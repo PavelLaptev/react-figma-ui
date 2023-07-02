@@ -5,12 +5,15 @@ import React, {
   KeyboardEvent
 } from 'react'
 
+import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
 export type IconButtonProps = {
+  className?: string
   children: ReactNode
   disabled?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
+  isActive?: boolean
   propagateEscapeKeyDown?: boolean
 }
 
@@ -30,7 +33,11 @@ export const IconButton = (props: IconButtonProps) => {
 
   return (
     <button
-      className={styles.iconButton}
+      className={joinClassNames(
+        styles.iconButton,
+        props.className,
+        props.isActive && styles.isActive
+      )}
       disabled={props.disabled === true}
       onClick={props.disabled === true ? undefined : props.onClick}
       onKeyDown={props.disabled === true ? undefined : handleKeyDown}

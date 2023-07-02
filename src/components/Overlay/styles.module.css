@@ -1,0 +1,52 @@
+.contextMenu {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-2);
+  background-color: var(--figma-color-bg-menu);
+  padding: var(--space-extra-small) 0;
+  box-shadow: var(--elevation-400-menu-panel);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* OPTION */
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-extra-small);
+  padding: 0 var(--space-small);
+  height: 24px;
+}
+
+.option:hover {
+  background-color: var(--figma-color-bg-menu-selected);
+}
+
+.optionText {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.optionLabel {
+  color: var(--figma-color-text-menu);
+}
+
+.optionCaption {
+  color: var(--figma-color-text-menu);
+  text-align: right;
+}
+
+.optionIcon svg {
+  fill: var(--figma-color-icon-menu);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--figma-color-border-menu);
+  margin: var(--space-extra-small) 0;
+}

@@ -6,10 +6,37 @@
   padding: 0 var(--space-extra-small);
 }
 
+.panelHeader .title {
+  color: var(--figma-color-text-secondary);
+}
+
+.panelHeader:hover .title {
+  color: var(--figma-color-text-secondary-hover);
+}
+
+.panelHeader:hover .icon svg {
+  fill: var(--figma-color-icon-secondary-hover);
+}
+
 .title {
   flex: 1;
+  transition: 0.1s color ease-out;
 }
 
 .buttons {
   display: flex;
+}
+
+.icon svg {
+  fill: var(--figma-color-icon-secondary);
+}
+
+/* IS ACTIVE CLASSES */
+
+.isActive .title {
+  color: var(--figma-color-text);
+}
+
+.isActive .icon svg {
+  fill: var(--figma-color-icon);
 }
