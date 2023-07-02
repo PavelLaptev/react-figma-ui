@@ -8,6 +8,7 @@
 
 .label {
   flex: var(--inputConteiner-label-flex-width);
+  padding-left: var(--space-extra-small);
 }
 
 .dropdownMenuContainer {
