@@ -1,23 +1,24 @@
 // Button.stories.ts|tsx
+
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Toggle } from '.'
+import { Checkbox } from '.'
 
-const meta: Meta<typeof Toggle> = {
-  component: Toggle
+const meta: Meta<typeof Checkbox> = {
+  component: Checkbox
 }
 
 export default meta
-
-type Story = StoryObj<typeof Toggle>
+type Story = StoryObj<typeof Checkbox>
 
 export const Default: Story = {
   args: {
-    disabled: false,
-    checked: false,
+    id: 'checkbox',
     onChange: (checked) => {
       console.log(checked)
     },
-    children: 'Toggle'
+    disabled: false,
+    checked: false,
+    children: 'Checkbox'
   }
 }

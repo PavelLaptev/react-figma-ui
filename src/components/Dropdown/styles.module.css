@@ -1,3 +1,20 @@
+.dropdownContainer {
+  position: relative;
+  display: flex;
+  gap: var(--space-small);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.label {
+  flex: var(--inputConteiner-label-flex-width);
+}
+
+.dropdownMenuContainer {
+  flex: var(--inputConteiner-input-flex-width);
+  position: relative;
+}
+
 .dropdown {
   display: flex;
   align-items: center;
@@ -18,4 +35,10 @@
 
 .dropdownIcon {
   fill: var(--figma-color-icon);
+}
+
+.overlayList {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

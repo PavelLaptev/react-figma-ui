@@ -11,7 +11,7 @@ export interface CheckboxProps {
   checked?: boolean
 }
 
-export const Toggle = (props: CheckboxProps) => {
+export const Checkbox = (props: CheckboxProps) => {
   const [checked, setChecked] = React.useState(props.checked)
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -22,11 +22,11 @@ export const Toggle = (props: CheckboxProps) => {
   return (
     <label
       className={joinClassNames(
-        styles.toggleContainer,
+        styles.checkboxContainer,
         props.disabled && styles.disabled
       )}
     >
-      <div className={styles.toggleSymbol}>
+      <div className={styles.checkboxSymbol}>
         <input
           checked={checked}
           className={styles.input}
@@ -35,8 +35,12 @@ export const Toggle = (props: CheckboxProps) => {
           onChange={handleChange}
           type='checkbox'
         />
-        <div className={styles.toggle}>
-          <div className={styles.toggleIconInner} />
+        <div className={styles.checkbox}>
+          {checked && (
+            <svg className={styles.checkIcon} viewBox='0 0 12 12'>
+              <path d='m3.17647 4.82377 1.88235 1.88236 3.76471-3.76472L10 4.11788l-4.94118 4.9412L2 6.00024l1.17647-1.17647Z' />
+            </svg>
+          )}
         </div>
       </div>
 

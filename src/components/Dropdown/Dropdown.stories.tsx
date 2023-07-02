@@ -13,5 +13,32 @@ export default meta
 type Story = StoryObj<typeof Dropdown>
 
 export const Default: Story = {
-  args: {}
+  args: {
+    value: 'github',
+    onChange: (id) => {
+      console.log(id)
+    },
+    optionsSections: [
+      {
+        options: [
+          {
+            id: 'github',
+            label: 'GitHub'
+          },
+          {
+            id: 'twitter',
+            label: 'Twitter'
+          },
+          {
+            id: 'linkedin',
+            label: 'LinkedIn'
+          },
+          {
+            id: 'facebook',
+            label: 'Facebook'
+          }
+        ]
+      }
+    ]
+  }
 }

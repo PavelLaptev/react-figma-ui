@@ -28,8 +28,7 @@ export default [
         plugins: [autoprefixer()],
         extract: 'ui.css',
         modules: true,
-        minimize: true,
-        use: ['sass']
+        minimize: true
       }),
       json(),
       commonjs(),

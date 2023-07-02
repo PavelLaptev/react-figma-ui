@@ -1,0 +1,34 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  gap: var(--space-small);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.input {
+  flex: var(--inputConteiner-input-flex-width);
+  height: 30px;
+  border-radius: var(--border-radius-2);
+  outline: 1px solid transparent;
+  padding: 0 var(--space-extra-small);
+}
+
+.input:hover {
+  border-color: var(--figma-color-border);
+}
+
+.input:focus {
+  outline: none;
+  outline: 2px solid var(--figma-color-border-brand-strong);
+}
+
+.label {
+  flex: var(--inputConteiner-label-flex-width);
+}
+
+/* /// */
+
+.hasOutline {
+  border: 1px solid var(--figma-color-border);
+}
