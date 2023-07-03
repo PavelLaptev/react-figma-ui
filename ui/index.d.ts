@@ -137,7 +137,12 @@ interface CheckboxProps$1 {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Toggle: (props: CheckboxProps$1) => JSX.Element;
+declare const Toggle: {
+    (props: CheckboxProps$1): JSX.Element;
+    defaultProps: {
+        checked: boolean;
+    };
+};
 
 interface OptionProps {
     id: string;
@@ -179,7 +184,12 @@ interface CheckboxProps {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Checkbox: (props: CheckboxProps) => JSX.Element;
+declare const Checkbox: {
+    (props: CheckboxProps): JSX.Element;
+    defaultProps: {
+        checked: boolean;
+    };
+};
 
 interface PanelProps {
     id?: string;

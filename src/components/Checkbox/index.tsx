@@ -55,3 +55,7 @@ export const Checkbox = (props: CheckboxProps) => {
     </label>
   )
 }
+
+Checkbox.defaultProps = {
+  checked: false
+}

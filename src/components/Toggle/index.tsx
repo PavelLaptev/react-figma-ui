@@ -52,3 +52,7 @@ export const Toggle = (props: CheckboxProps) => {
     </label>
   )
 }
+
+Toggle.defaultProps = {
+  checked: false
+}
