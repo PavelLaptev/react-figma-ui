@@ -4,6 +4,8 @@ import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
 export interface CheckboxProps {
+  className?: string
+  style?: React.CSSProperties
   children: ReactNode
   id: string
   onChange: (checked: boolean) => void
@@ -23,14 +25,20 @@ export const Toggle = (props: CheckboxProps) => {
     <label
       className={joinClassNames(
         styles.toggleContainer,
-        props.disabled && styles.disabled
+        props.disabled && styles.disabled,
+        props.className
       )}
+      htmlFor={props.id}
+      style={{
+        ...props.style
+      }}
     >
       <div className={styles.toggleSymbol}>
         <input
           checked={checked}
           className={styles.input}
           disabled={props.disabled}
+          id={props.id}
           name={props.id}
           onChange={handleChange}
           type='checkbox'

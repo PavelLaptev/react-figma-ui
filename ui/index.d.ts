@@ -129,6 +129,8 @@ declare const PanelHeader: {
 };
 
 interface CheckboxProps$1 {
+    className?: string;
+    style?: React.CSSProperties;
     children: ReactNode;
     id: string;
     onChange: (checked: boolean) => void;
@@ -169,6 +171,8 @@ interface PanelProps$1 {
 declare const Dropdown: (props: PanelProps$1) => JSX.Element;
 
 interface CheckboxProps {
+    className?: string;
+    style?: React.CSSProperties;
     children: ReactNode;
     id: string;
     onChange: (checked: boolean) => void;
