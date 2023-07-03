@@ -40,6 +40,7 @@
 
 .overlayList {
   position: absolute;
+  z-index: var(--z-index-2);
   top: 0;
   width: 100%;
 }
