@@ -160,7 +160,7 @@ interface PanelProps$1 {
     label?: string;
     id?: string;
     className?: string;
-    value: string;
+    value?: string;
     optionsSections: SectionProps[];
     onChange: (value: string) => void;
     labelFlex?: number;

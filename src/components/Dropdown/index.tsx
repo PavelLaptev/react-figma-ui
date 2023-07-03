@@ -12,7 +12,7 @@ export interface PanelProps {
   label?: string
   id?: string
   className?: string
-  value: string
+  value?: string
   optionsSections: SectionProps[]
   onChange: (value: string) => void
   labelFlex?: number
@@ -40,8 +40,14 @@ export const Dropdown = (props: PanelProps) => {
   }
 
   React.useEffect(() => {
-    const label = findLabelById(props.value)
-    setValue(label)
+    if (props.value) {
+      const label = findLabelById(props.value)
+      setValue(label)
+    }
+
+    if (!props.value) {
+      setValue(props.optionsSections[0].options[0].label)
+    }
   }, [props.value])
 
   React.useEffect(() => {
