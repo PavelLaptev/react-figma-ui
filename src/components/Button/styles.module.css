@@ -33,9 +33,6 @@
   color: var(--figma-color-text-onbrand);
   line-height: 28px;
 }
-.default:not(.disabled) button:focus {
-  border-color: var(--figma-color-border-brand-strong);
-}
 .default.disabled button {
   background-color: var(--figma-color-bg-disabled);
   color: var(--figma-color-text-ondisabled);
@@ -44,9 +41,6 @@
 .default.danger button {
   background-color: var(--figma-color-bg-danger);
   color: var(--figma-color-text-ondanger);
-}
-.default.danger:not(.disabled) button:focus {
-  border-color: var(--figma-color-border-danger-strong);
 }
 .default.danger.disabled button {
   background-color: var(--figma-color-bg-disabled);
@@ -60,12 +54,6 @@
   color: var(--figma-color-text);
   line-height: 30px;
 }
-.secondary:not(.disabled) button:focus {
-  padding: 0 14px;
-  border-width: 2px;
-  border-color: var(--figma-color-border-brand-strong);
-  line-height: 28px;
-}
 .secondary.disabled button {
   border-color: var(--figma-color-border-disabled-strong);
   color: var(--figma-color-text-disabled);
@@ -74,9 +62,6 @@
 .secondary.danger button {
   border-color: var(--figma-color-border-danger-strong);
   color: var(--figma-color-text-danger);
-}
-.secondary.danger:not(.disabled) button:focus {
-  border-color: var(--figma-color-border-danger-strong);
 }
 .secondary.danger.disabled button {
   border-color: var(--figma-color-border-disabled-strong);
