@@ -37,8 +37,8 @@ export const Icon = (props: IconProps) => {
         props.customIcon
       ) : (
         <svg
-          width='100%'
-          height='100%'
+          width={`${props.size}px`}
+          height={`${props.size}px`}
           viewBox={`0 0 ${props.size} ${props.size}`}
           fillRule='evenodd'
         >

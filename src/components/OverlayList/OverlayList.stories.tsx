@@ -53,7 +53,7 @@ export const AllInOne: Story = {
             id: 'option-2',
             label: 'Option 2',
             caption: 'caption',
-            icon: <Icon name='lock' size='16' />
+            icon: <Icon name='text' size='32' />
           }
         ]
       },

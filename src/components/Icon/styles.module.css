@@ -1,9 +1,16 @@
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@layer default-kit-component {
+  .icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.icon svg {
-  fill: currentColor;
+  .icon svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: currentColor;
+  }
 }
