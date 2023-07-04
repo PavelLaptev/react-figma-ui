@@ -25,6 +25,7 @@ export interface OverlayListProps {
   optionsSections: SectionProps[]
   onClick: (id: string) => void
   onOutsideClick?: () => void
+  blockPointerEventsFor?: HTMLElement
 }
 
 export const OverlayList = (props: OverlayListProps) => {
@@ -60,6 +61,21 @@ export const OverlayList = (props: OverlayListProps) => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
+  useEffect(() => {
+    // block any pointer events outside of the dropdown
+
+    if (props.blockPointerEventsFor && dropdownRef.current) {
+      props.blockPointerEventsFor.style.pointerEvents = 'none'
+      dropdownRef.current.style.pointerEvents = 'auto'
+    }
+
+    return () => {
+      if (props.blockPointerEventsFor) {
+        props.blockPointerEventsFor.style.pointerEvents = 'auto'
+      }
+    }
+  }, [props.blockPointerEventsFor])
 
   return (
     <div

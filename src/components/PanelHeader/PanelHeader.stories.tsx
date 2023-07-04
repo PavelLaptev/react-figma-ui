@@ -43,13 +43,27 @@ export const WithIcon: Story = {
 }
 
 const DropdownTemplate = () => {
+  const panelHeaderRef = React.useRef<HTMLDivElement>(null)
   const [showDropdown, setShowDropdown] = React.useState(false)
+
+  const handleMenuClose = () => {
+    setShowDropdown(false)
+    console.log('close')
+  }
+
+  React.useEffect(() => {
+    console.log(showDropdown)
+  }, [showDropdown])
 
   return (
     <>
       <PanelHeader
+        ref={panelHeaderRef}
         title='Panel Header'
         isActive={false}
+        onClick={() => {
+          setShowDropdown(true)
+        }}
         iconButtons={[
           {
             children: (
@@ -64,12 +78,9 @@ const DropdownTemplate = () => {
                       right: 0,
                       zIndex: 1
                     }}
-                    onClick={(id) => {
-                      console.log(id)
-                    }}
-                    onOutsideClick={() => {
-                      setShowDropdown(false)
-                    }}
+                    blockPointerEventsFor={panelHeaderRef.current}
+                    onClick={handleMenuClose}
+                    onOutsideClick={handleMenuClose}
                     optionsSections={[
                       {
                         options: [
@@ -91,10 +102,7 @@ const DropdownTemplate = () => {
                   />
                 )}
               </>
-            ),
-            onClick: () => {
-              setShowDropdown(!showDropdown)
-            }
+            )
           }
         ]}
       />

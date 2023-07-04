@@ -15,39 +15,44 @@ export type PanelHeaderProps = {
   iconButtons?: IconButtonProps[]
 }
 
-export const PanelHeader = (props: PanelHeaderProps) => {
-  return (
-    <div
-      className={joinClassNames(
-        styles.panelHeader,
-        props.className,
-        props.isActive && styles.isActive
-      )}
-      style={{
-        ...props.style
-      }}
-      onClick={props.onClick}
-    >
-      <Text className={styles.title} fontSize={11} fontWeight='bold'>
-        {props.title}
-      </Text>
-      {props.iconButtons && (
-        <div className={styles.buttons}>
-          {props.iconButtons.map((iconButton, index) => (
-            <IconButton
-              key={index}
-              onClick={iconButton.onClick}
-              disabled={iconButton.disabled}
-              isActive={iconButton.isActive}
-            >
-              {iconButton.children}
-            </IconButton>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
+export const PanelHeader = React.forwardRef<HTMLDivElement, PanelHeaderProps>(
+  (props, ref) => {
+    return (
+      <div
+        className={joinClassNames(
+          styles.panelHeader,
+          props.className,
+          props.isActive && styles.isActive
+        )}
+        style={{
+          ...props.style
+        }}
+        ref={ref}
+        onClick={props.onClick}
+      >
+        <Text className={styles.title} fontSize={11} fontWeight='bold'>
+          {props.title}
+        </Text>
+        {props.iconButtons && (
+          <div className={styles.buttons}>
+            {props.iconButtons.map((iconButton, index) => (
+              <IconButton
+                key={index}
+                onClick={iconButton.onClick}
+                disabled={iconButton.disabled}
+                isActive={iconButton.isActive}
+              >
+                {iconButton.children}
+              </IconButton>
+            ))}
+          </div>
+        )}
+      </div>
+    )
+  }
+)
+
+PanelHeader.displayName = 'PanelHeader'
 
 PanelHeader.defaultProps = {
   isActive: false
