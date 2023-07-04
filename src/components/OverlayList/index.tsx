@@ -1,4 +1,4 @@
-import React, { Fragment, forwardRef } from 'react'
+import React, { Fragment, useEffect } from 'react'
 
 import { Icon } from '../Icon'
 import { Text } from '../Text'
@@ -9,9 +9,8 @@ import styles from './styles.module.css'
 export interface OptionProps {
   id: string
   label: string
-  icon?: Icon16Type
-  customIcon?: React.ReactNode
   caption?: string
+  icon?: React.ReactNode
 }
 
 export interface SectionProps {
@@ -19,47 +18,62 @@ export interface SectionProps {
   options: OptionProps[]
 }
 
-export interface PanelProps {
+export interface OverlayListProps {
   hasShift?: boolean
   className?: string
+  style?: React.CSSProperties
   optionsSections: SectionProps[]
   onClick: (id: string) => void
+  onOutsideClick?: () => void
 }
 
-export const OverlayList = forwardRef<any, PanelProps>((props, ref) => {
+export const OverlayList = (props: OverlayListProps) => {
+  const dropdownRef = React.useRef<HTMLDivElement>(null)
+
   const handleOptionLeftContent = (option: OptionProps) => {
-    if (option.icon || option.customIcon) {
-      return (
-        <Icon
-          className={styles.optionIcon}
-          name={option.icon}
-          customIcon={option.customIcon}
-          size='16'
-        />
-      )
+    if (option.icon) {
+      return <div className={styles.optionIcon}>{option.icon}</div>
     }
 
-    if (!option.icon && !option.customIcon) {
+    if (!option.icon) {
       if (props.hasShift) {
-        return <Icon className={styles.optionIcon} name={'empty'} size='16' />
+        return <div className={styles.optionIcon} />
       }
     }
 
     return null
   }
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        props.onOutsideClick && props.onOutsideClick()
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   return (
     <div
       className={joinClassNames(styles.contextMenu, props.className)}
-      ref={ref}
+      style={{
+        ...props.style
+      }}
+      ref={dropdownRef}
     >
       {props.optionsSections.map((section, i) => (
         <Fragment key={i}>
           {section.title && (
             <div className={styles.sectionTitleContainer}>
-              {props.hasShift && (
-                <Icon className={styles.optionIcon} name={'empty'} size='16' />
-              )}
+              {props.hasShift && <div className={styles.optionIcon} />}
               <Text className={styles.sectionTitle} fontSize={11}>
                 {section.title}
               </Text>
@@ -91,6 +105,4 @@ export const OverlayList = forwardRef<any, PanelProps>((props, ref) => {
       ))}
     </div>
   )
-})
-
-OverlayList.displayName = 'OverlayList'
+}

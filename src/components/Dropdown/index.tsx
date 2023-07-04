@@ -8,7 +8,7 @@ import { Text } from '../Text'
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
-export interface PanelProps {
+export interface DropdownProps {
   label?: string
   id?: string
   className?: string
@@ -19,9 +19,7 @@ export interface PanelProps {
   inputFlex?: number
 }
 
-export const Dropdown = (props: PanelProps) => {
-  const dropdownRef = React.useRef<HTMLDivElement>(null)
-
+export const Dropdown = (props: DropdownProps) => {
   const [value, setValue] = React.useState('')
   const [isOpened, setIsOpened] = React.useState(false)
 
@@ -50,23 +48,6 @@ export const Dropdown = (props: PanelProps) => {
     }
   }, [props.value])
 
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpened(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
-
   return (
     <div
       className={joinClassNames(styles.dropdownContainer, props.className)}
@@ -90,7 +71,6 @@ export const Dropdown = (props: PanelProps) => {
       >
         {isOpened && (
           <OverlayList
-            ref={dropdownRef}
             className={styles.overlayList}
             optionsSections={props.optionsSections}
             onClick={(id) => {
@@ -98,6 +78,9 @@ export const Dropdown = (props: PanelProps) => {
               setValue(label)
               handleToggle()
               props.onChange(id)
+            }}
+            onOutsideClick={() => {
+              setIsOpened(false)
             }}
           />
         )}

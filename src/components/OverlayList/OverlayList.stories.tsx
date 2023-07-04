@@ -1,5 +1,7 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { Icon } from '../Icon'
 import { OverlayList } from '.'
 
 const meta: Meta<typeof OverlayList> = {
@@ -45,13 +47,13 @@ export const AllInOne: Story = {
             id: 'option-1',
             label: 'Option 1',
             caption: 'caption',
-            icon: 'code'
+            icon: <Icon name='code' size='16' />
           },
           {
             id: 'option-2',
             label: 'Option 2',
             caption: 'caption',
-            icon: 'lock'
+            icon: <Icon name='lock' size='16' />
           }
         ]
       },

@@ -21,7 +21,7 @@ const Template = ({
 }) => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {Object.keys(collection).map((icon) => (
+      {Object.keys(collection).map((icon: any) => (
         <div
           key={icon}
           style={{

@@ -62,73 +62,71 @@
   --inputConteiner-input-flex-width: 6;
 }
 
-.figma-dark {
-  color-scheme: dark;
-}
+@layer default-kit-global {
+  * {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+  }
 
-* {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: currentColor;
-}
+  body {
+    margin: 0;
+    background-color: var(--figma-color-bg);
+    color: var(--figma-color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-11);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-16);
+  }
 
-body {
-  margin: 0;
-  background-color: var(--figma-color-bg);
-  color: var(--figma-color-text);
-  font-family: var(--font-family);
-  font-size: var(--font-size-11);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-16);
-}
+  div,
+  span {
+    cursor: default;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+  }
 
-div,
-span {
-  cursor: default;
-  user-select: none;
-  margin: 0;
-  padding: 0;
-}
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: inherit;
+  }
 
-h1,
-h2,
-h3 {
-  margin: 0;
-  font-weight: inherit;
-}
+  button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    font: inherit;
+    outline: 0;
+  }
 
-button {
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  font: inherit;
-  outline: 0;
-}
+  hr {
+    border: 0;
+    margin: 0;
+  }
 
-hr {
-  border: 0;
-  margin: 0;
-}
+  label {
+    display: block;
+  }
 
-label {
-  display: block;
-}
+  input,
+  textarea {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    cursor: default;
+    font: inherit;
+    outline: 0;
+  }
 
-input,
-textarea {
-  padding: 0;
-  border: 0;
-  margin: 0;
-  cursor: default;
-  font: inherit;
-  outline: 0;
-}
+  svg {
+    display: block;
+  }
 
-svg {
-  display: block;
-}
-
-::selection {
-  background-color: var(--figma-color-bg-onselected);
+  ::selection {
+    background-color: var(--figma-color-bg-onselected);
+  }
 }

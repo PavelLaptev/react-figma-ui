@@ -17,8 +17,8 @@
 .option {
   display: flex;
   align-items: center;
-  gap: var(--space-extra-small);
-  padding: 0 var(--space-small);
+  /* gap: var(--space-extra-small); */
+  padding: 0 var(--space-small) 0 var(--space-extra-small);
   height: 24px;
 }
 
@@ -33,12 +33,22 @@
 }
 
 .optionLabel {
+  padding-left: var(--space-extra-small);
   color: var(--figma-color-text-menu);
 }
 
 .optionCaption {
   color: var(--figma-color-text-menu);
   text-align: right;
+}
+
+.optionIcon {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
 .optionIcon svg {
@@ -55,11 +65,11 @@
   display: flex;
   height: 24px;
   align-items: center;
-  gap: var(--space-extra-small);
-  padding: 0 var(--space-small);
+  padding: 0 var(--space-small) 0 var(--space-extra-small);
 }
 
 .sectionTitle {
   color: var(--figma-color-text-menu);
   opacity: var(--opacity-30);
+  padding-left: var(--space-extra-small);
 }

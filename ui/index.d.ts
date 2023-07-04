@@ -34,7 +34,7 @@ interface DividerProps {
 }
 declare const Divider: (props: DividerProps) => JSX.Element;
 
-interface PanelProps$3 {
+interface PanelProps {
     className?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
@@ -42,7 +42,7 @@ interface PanelProps$3 {
     hasTopBottomPadding?: boolean;
 }
 declare const Panel: {
-    (props: PanelProps$3): JSX.Element;
+    (props: PanelProps): JSX.Element;
     defaultProps: {
         hasLeftRightPadding: boolean;
         hasTopBottomPadding: boolean;
@@ -113,13 +113,7 @@ type PanelHeaderProps = {
     title?: string;
     isActive?: boolean;
     onClick?: () => void;
-    iconButtons?: {
-        icon: Icon16Type | Icon32Type;
-        customIcon?: React.ReactNode;
-        disabled?: boolean;
-        isActive?: boolean;
-        onClick: () => void;
-    }[];
+    iconButtons?: IconButtonProps[];
 };
 declare const PanelHeader: {
     (props: PanelHeaderProps): JSX.Element;
@@ -147,23 +141,24 @@ declare const Toggle: {
 interface OptionProps {
     id: string;
     label: string;
-    icon?: Icon16Type;
-    customIcon?: React.ReactNode;
     caption?: string;
+    icon?: React.ReactNode;
 }
 interface SectionProps {
     title?: string;
     options: OptionProps[];
 }
-interface PanelProps$2 {
+interface OverlayListProps {
     hasShift?: boolean;
     className?: string;
+    style?: React.CSSProperties;
     optionsSections: SectionProps[];
     onClick: (id: string) => void;
+    onOutsideClick?: () => void;
 }
-declare const OverlayList: React.ForwardRefExoticComponent<PanelProps$2 & React.RefAttributes<any>>;
+declare const OverlayList: (props: OverlayListProps) => JSX.Element;
 
-interface PanelProps$1 {
+interface DropdownProps {
     label?: string;
     id?: string;
     className?: string;
@@ -173,7 +168,7 @@ interface PanelProps$1 {
     labelFlex?: number;
     inputFlex?: number;
 }
-declare const Dropdown: (props: PanelProps$1) => JSX.Element;
+declare const Dropdown: (props: DropdownProps) => JSX.Element;
 
 interface CheckboxProps {
     className?: string;
@@ -191,7 +186,7 @@ declare const Checkbox: {
     };
 };
 
-interface PanelProps {
+interface InputProps {
     id?: string;
     label?: string;
     className?: string;
@@ -203,7 +198,7 @@ interface PanelProps {
     inputFlex?: number;
 }
 declare const Input: {
-    (props: PanelProps): JSX.Element;
+    (props: InputProps): JSX.Element;
     defaultProps: {
         hasOutline: boolean;
     };

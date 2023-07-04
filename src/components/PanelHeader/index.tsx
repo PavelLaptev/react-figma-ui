@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Icon } from '../Icon'
-import { IconButton } from '../IconButton'
+import { IconButton, IconButtonProps } from '../IconButton'
 import { Text } from '../Text'
 
 import { joinClassNames } from '../../utils/joinClassNames'
@@ -13,13 +12,7 @@ export type PanelHeaderProps = {
   title?: string
   isActive?: boolean
   onClick?: () => void
-  iconButtons?: {
-    icon: Icon16Type | Icon32Type
-    customIcon?: React.ReactNode
-    disabled?: boolean
-    isActive?: boolean
-    onClick: () => void
-  }[]
+  iconButtons?: IconButtonProps[]
 }
 
 export const PanelHeader = (props: PanelHeaderProps) => {
@@ -41,8 +34,13 @@ export const PanelHeader = (props: PanelHeaderProps) => {
       {props.iconButtons && (
         <div className={styles.buttons}>
           {props.iconButtons.map((iconButton, index) => (
-            <IconButton key={index} onClick={iconButton.onClick}>
-              <Icon className={styles.icon} name={iconButton.icon} size='32' />
+            <IconButton
+              key={index}
+              onClick={iconButton.onClick}
+              disabled={iconButton.disabled}
+              isActive={iconButton.isActive}
+            >
+              {iconButton.children}
             </IconButton>
           ))}
         </div>

@@ -5,7 +5,7 @@ import { Text } from '../Text'
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
-export interface PanelProps {
+export interface InputProps {
   id?: string
   label?: string
   className?: string
@@ -17,7 +17,7 @@ export interface PanelProps {
   inputFlex?: number
 }
 
-export const Input = (props: PanelProps) => {
+export const Input = (props: InputProps) => {
   const [value, setValue] = React.useState(props.value)
 
   React.useEffect(() => {

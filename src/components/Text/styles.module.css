@@ -1,18 +1,20 @@
-.text {
-  color: var(--figma-color-text);
-  pointer-events: none;
-}
+@layer default-kit-component {
+  .text {
+    color: var(--figma-color-text);
+    pointer-events: none;
+  }
 
-.numeric {
-  font-variant-numeric: tabular-nums;
-}
+  .numeric {
+    font-variant-numeric: tabular-nums;
+  }
 
-.left {
-  text-align: left;
-}
-.center {
-  text-align: center;
-}
-.right {
-  text-align: right;
+  .left {
+    text-align: left;
+  }
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
 }
