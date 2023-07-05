@@ -7,7 +7,7 @@ export interface StackProps {
   className?: string
   style?: React.CSSProperties
   children?: React.ReactNode
-  gap?: number
+  gap?: number | string
   direction?: 'row' | 'column'
   hasLeftRightPadding?: boolean
   hasTopBottomPadding?: boolean
@@ -21,8 +21,7 @@ export const Stack = (props: StackProps) => {
         styles.stack,
         props.className,
         props.hasLeftRightPadding && styles.leftRightPadding,
-        props.hasTopBottomPadding && styles.topBottomPadding,
-        props.onClick && styles.clickable
+        props.hasTopBottomPadding && styles.topBottomPadding
       )}
       onClick={props.onClick}
       style={{

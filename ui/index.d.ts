@@ -91,7 +91,7 @@ interface StackProps {
     className?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
-    gap?: number;
+    gap?: number | string;
     direction?: 'row' | 'column';
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
@@ -213,4 +213,13 @@ interface DividerProps {
 }
 declare const Tabs: (props: DividerProps) => JSX.Element;
 
-export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle };
+interface ToggleRowProps {
+    id: string;
+    label: string;
+    icon?: React.ReactNode;
+    checked?: boolean;
+    onChange?: (value: boolean) => void;
+}
+declare const ToggleRow: (props: ToggleRowProps) => JSX.Element;
+
+export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle, ToggleRow };

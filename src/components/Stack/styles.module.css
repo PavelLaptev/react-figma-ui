@@ -12,7 +12,3 @@
   padding-top: var(--space-extra-small);
   padding-bottom: var(--space-extra-small);
 }
-
-.clickable:hover {
-  background-color: var(--figma-color-bg-hover);
-}
