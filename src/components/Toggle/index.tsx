@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 export interface CheckboxProps {
   className?: string
   style?: React.CSSProperties
-  children: ReactNode
+  children?: ReactNode
   id: string
   onChange: (checked: boolean) => void
   disabled?: boolean
@@ -48,7 +48,9 @@ export const Toggle = (props: CheckboxProps) => {
         </div>
       </div>
 
-      <div className={styles.children}>{props.children}</div>
+      {props.children && (
+        <div className={styles.children}>{props.children}</div>
+      )}
     </label>
   )
 }

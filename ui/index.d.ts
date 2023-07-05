@@ -120,7 +120,7 @@ declare const PanelHeader: React.ForwardRefExoticComponent<PanelHeaderProps & Re
 interface CheckboxProps$1 {
     className?: string;
     style?: React.CSSProperties;
-    children: ReactNode;
+    children?: ReactNode;
     id: string;
     onChange: (checked: boolean) => void;
     disabled?: boolean;
@@ -169,7 +169,7 @@ declare const Dropdown: (props: DropdownProps) => JSX.Element;
 interface CheckboxProps {
     className?: string;
     style?: React.CSSProperties;
-    children: ReactNode;
+    children?: ReactNode;
     id: string;
     onChange: (checked: boolean) => void;
     disabled?: boolean;
