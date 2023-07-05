@@ -22,12 +22,12 @@ export const Text = (props: TextProps) => {
       className={joinClassNames(
         styles.text,
         styles[props.align],
+        styles[props.fontWeight],
         props.className
       )}
       style={{
         ...props.style,
-        fontSize: `${props.fontSize}px`,
-        fontWeight: props.fontWeight === 'bold' ? styles.bold : styles.regular
+        fontSize: `${props.fontSize}px`
       }}
     >
       {props.children}
