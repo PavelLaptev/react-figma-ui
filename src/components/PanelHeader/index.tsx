@@ -17,6 +17,11 @@ export type PanelHeaderProps = {
 
 export const PanelHeader = React.forwardRef<HTMLDivElement, PanelHeaderProps>(
   (props, ref) => {
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+      event.stopPropagation()
+      props.onClick && props.onClick()
+    }
+
     return (
       <div
         className={joinClassNames(
@@ -28,7 +33,7 @@ export const PanelHeader = React.forwardRef<HTMLDivElement, PanelHeaderProps>(
           ...props.style
         }}
         ref={ref}
-        onClick={props.onClick}
+        onClick={handleClick}
       >
         <Text className={styles.title} fontSize={11} fontWeight='bold'>
           {props.title}

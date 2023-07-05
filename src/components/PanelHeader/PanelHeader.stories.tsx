@@ -66,6 +66,15 @@ const DropdownTemplate = () => {
         }}
         iconButtons={[
           {
+            children: <Icon name='plus' size='32' />,
+            onClick: () => {
+              console.log('plus')
+            }
+          },
+          {
+            onClick: () => {
+              setShowDropdown(true)
+            },
             children: (
               <>
                 <Icon name='plus' size='32' />

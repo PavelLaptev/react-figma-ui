@@ -1,9 +1,4 @@
-import React, {
-  ReactNode,
-  MouseEventHandler,
-  useCallback,
-  KeyboardEvent
-} from 'react'
+import React, { ReactNode, MouseEventHandler } from 'react'
 
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
@@ -18,18 +13,10 @@ export type IconButtonProps = {
 }
 
 export const IconButton = (props: IconButtonProps) => {
-  const handleKeyDown = useCallback(
-    function (event: KeyboardEvent<HTMLButtonElement>): void {
-      if (event.key !== 'Escape') {
-        return
-      }
-      if (props.propagateEscapeKeyDown === false) {
-        event.stopPropagation()
-      }
-      event.currentTarget.blur()
-    },
-    [props.propagateEscapeKeyDown]
-  )
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
+    props.onClick && props.onClick(event)
+  }
 
   return (
     <button
@@ -38,10 +25,9 @@ export const IconButton = (props: IconButtonProps) => {
         props.className,
         props.isActive && styles.isActive
       )}
-      disabled={props.disabled === true}
-      onClick={props.disabled === true ? undefined : props.onClick}
-      onKeyDown={props.disabled === true ? undefined : handleKeyDown}
-      tabIndex={props.disabled === true ? -1 : 0}
+      disabled={props.disabled}
+      onClick={props.disabled ? undefined : handleClick}
+      tabIndex={props.disabled ? -1 : 0}
     >
       {props.children}
     </button>
