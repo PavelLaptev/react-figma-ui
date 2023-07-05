@@ -22,3 +22,16 @@ export const Default: Story = {
     hasOutline: true
   }
 }
+
+export const WithLabel: Story = {
+  args: {
+    id: 'input',
+    label: 'Label',
+    onChange: (value) => {
+      console.log(value)
+    },
+    disabled: false,
+    value: '',
+    hasOutline: true
+  }
+}

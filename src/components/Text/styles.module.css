@@ -4,8 +4,11 @@
     pointer-events: none;
   }
 
-  .numeric {
-    font-variant-numeric: tabular-nums;
+  .regular {
+    font-weight: 400;
+  }
+  .bold {
+    font-weight: 600;
   }
 
   .left {

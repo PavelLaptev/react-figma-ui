@@ -27,7 +27,7 @@ export const Text = (props: TextProps) => {
       style={{
         ...props.style,
         fontSize: `${props.fontSize}px`,
-        fontWeight: props.fontWeight === 'bold' ? '600' : '400'
+        fontWeight: props.fontWeight === 'bold' ? styles.bold : styles.regular
       }}
     >
       {props.children}
@@ -37,7 +37,6 @@ export const Text = (props: TextProps) => {
 
 Text.defaultProps = {
   align: 'left' as TextAlignType,
-  numeric: false,
   fontSize: 11,
   fontWeight: 'regular' as fontWeightType
 }

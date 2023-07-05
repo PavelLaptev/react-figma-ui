@@ -1,0 +1,30 @@
+.tabsContainer {
+  display: flex;
+}
+
+.tabs {
+  display: flex;
+  flex: 1;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--space-extra-small);
+  padding-right: var(--space-extra-small);
+  height: 32px;
+}
+
+.tabText {
+  color: var(--figma-color-text-secondary);
+}
+
+.activeTab .tabText {
+  color: var(--figma-color-text);
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+}

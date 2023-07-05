@@ -28,11 +28,11 @@ interface LoadingIndicatorProps {
 }
 declare const LoadingIndicator: (props: LoadingIndicatorProps) => JSX.Element;
 
-interface DividerProps {
+interface DividerProps$1 {
     className?: string;
     style?: React.CSSProperties;
 }
-declare const Divider: (props: DividerProps) => JSX.Element;
+declare const Divider: (props: DividerProps$1) => JSX.Element;
 
 interface PanelProps {
     className?: string;
@@ -82,7 +82,6 @@ declare const Text: {
     (props: TextProps): JSX.Element;
     defaultProps: {
         align: TextAlignType;
-        numeric: boolean;
         fontSize: number;
         fontWeight: fontWeightType;
     };
@@ -96,6 +95,7 @@ interface StackProps {
     direction?: 'row' | 'column';
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
+    onClick?: () => void;
 }
 declare const Stack: {
     (props: StackProps): JSX.Element;
@@ -200,4 +200,17 @@ declare const Input: {
     };
 };
 
-export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, OverlayList, Panel, PanelHeader, Stack, Text, Toggle };
+interface DividerProps {
+    className?: string;
+    style?: React.CSSProperties;
+    value?: string;
+    options?: {
+        value: string;
+        label: string;
+    }[];
+    onChange?: (value: string) => void;
+    iconButtons?: IconButtonProps[];
+}
+declare const Tabs: (props: DividerProps) => JSX.Element;
+
+export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle };

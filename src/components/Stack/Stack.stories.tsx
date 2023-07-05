@@ -17,6 +17,20 @@ const StackContent = () => {
 
 export const WithChildren: Story = {
   args: {
+    onClick: undefined,
+    children: <StackContent />,
+    direction: 'column',
+    gap: 0,
+    hasLeftRightPadding: true,
+    hasTopBottomPadding: false
+  }
+}
+
+export const Clickable: Story = {
+  args: {
+    onClick: () => {
+      console.log('clicked')
+    },
     children: <StackContent />,
     direction: 'column',
     gap: 0,
