@@ -122,7 +122,7 @@ interface CheckboxProps$1 {
     style?: React.CSSProperties;
     children?: ReactNode;
     id: string;
-    onChange: (checked: boolean) => void;
+    onChange?: (checked: boolean) => void;
     disabled?: boolean;
     checked?: boolean;
 }
@@ -171,7 +171,7 @@ interface CheckboxProps {
     style?: React.CSSProperties;
     children?: ReactNode;
     id: string;
-    onChange: (checked: boolean) => void;
+    onChang?: (checked: boolean) => void;
     disabled?: boolean;
     checked?: boolean;
 }

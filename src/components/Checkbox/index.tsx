@@ -1,4 +1,4 @@
-import React, { ReactNode, ChangeEvent } from 'react'
+import React, { ReactNode, ChangeEvent, useEffect } from 'react'
 
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
@@ -8,7 +8,7 @@ export interface CheckboxProps {
   style?: React.CSSProperties
   children?: ReactNode
   id: string
-  onChange: (checked: boolean) => void
+  onChang?: (checked: boolean) => void
   disabled?: boolean
   checked?: boolean
 }
@@ -18,8 +18,12 @@ export const Checkbox = (props: CheckboxProps) => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setChecked(event.currentTarget.checked)
-    props.onChange(event.currentTarget.checked)
+    props.onChang && props.onChang(event.currentTarget.checked)
   }
+
+  useEffect(() => {
+    setChecked(props.checked)
+  }, [props.checked])
 
   return (
     <label
