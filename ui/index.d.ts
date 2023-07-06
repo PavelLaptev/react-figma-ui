@@ -31,6 +31,7 @@ declare const LoadingIndicator: (props: LoadingIndicatorProps) => JSX.Element;
 interface DividerProps$1 {
     className?: string;
     style?: React.CSSProperties;
+    isDashed?: boolean;
 }
 declare const Divider: (props: DividerProps$1) => JSX.Element;
 

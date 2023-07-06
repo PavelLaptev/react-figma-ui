@@ -11,13 +11,15 @@ export interface DividerProps {
 
 export const Divider = (props: DividerProps) => {
   return (
-    <hr
+    <div
       className={joinClassNames(
         styles.divider,
         props.isDashed && styles.dashed,
         props.className
       )}
       style={props.style}
-    />
+    >
+      <hr />
+    </div>
   )
 }
