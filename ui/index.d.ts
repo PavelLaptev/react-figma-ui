@@ -162,8 +162,8 @@ interface DropdownProps {
     value?: string;
     optionsSections: SectionProps[];
     onChange: (value: string) => void;
-    labelFlex?: number;
-    inputFlex?: number;
+    labelGreed?: number;
+    inputGreed?: number;
 }
 declare const Dropdown: (props: DropdownProps) => JSX.Element;
 
@@ -191,8 +191,8 @@ interface InputProps {
     disabled?: boolean;
     onChange: (value: string) => void;
     hasOutline?: boolean;
-    labelFlex?: number;
-    inputFlex?: number;
+    labelGreed?: number;
+    inputGreed?: number;
 }
 declare const Input: {
     (props: InputProps): JSX.Element;

@@ -1,10 +1,14 @@
 .dropdownContainer {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gridLayout {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-small);
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .label {
@@ -13,6 +17,7 @@
 }
 
 .dropdownMenuContainer {
+  flex: 1;
   grid-column: span var(--inputConteiner-input-grid-width);
   position: relative;
 }

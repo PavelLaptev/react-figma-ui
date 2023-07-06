@@ -13,8 +13,8 @@ export interface InputProps {
   disabled?: boolean
   onChange: (value: string) => void
   hasOutline?: boolean
-  labelFlex?: number
-  inputFlex?: number
+  labelGreed?: number
+  inputGreed?: number
 }
 
 export const Input = (props: InputProps) => {
@@ -30,12 +30,18 @@ export const Input = (props: InputProps) => {
   }
 
   return (
-    <div className={joinClassNames(styles.inputContainer, props.className)}>
+    <div
+      className={joinClassNames(
+        styles.inputContainer,
+        props.className,
+        props.label && styles.gridLayout
+      )}
+    >
       {props.label && (
         <Text
           className={styles.label}
           style={{
-            flex: props.labelFlex
+            ...(props.labelGreed && { gridColumn: `span ${props.labelGreed}` })
           }}
         >
           {props.label}
@@ -52,7 +58,7 @@ export const Input = (props: InputProps) => {
           props.hasOutline && styles.hasOutline
         )}
         style={{
-          flex: props.inputFlex
+          ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })
         }}
       />
     </div>

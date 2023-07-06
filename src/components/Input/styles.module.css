@@ -1,13 +1,18 @@
 .inputContainer {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-small);
+  display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-small);
+}
+
 .input {
+  flex: 1;
   grid-column: span var(--inputConteiner-input-grid-width);
   height: 30px;
   border-radius: var(--border-radius-2);

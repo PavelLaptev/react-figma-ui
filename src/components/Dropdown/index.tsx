@@ -15,8 +15,8 @@ export interface DropdownProps {
   value?: string
   optionsSections: SectionProps[]
   onChange: (value: string) => void
-  labelFlex?: number
-  inputFlex?: number
+  labelGreed?: number
+  inputGreed?: number
 }
 
 export const Dropdown = (props: DropdownProps) => {
@@ -50,14 +50,18 @@ export const Dropdown = (props: DropdownProps) => {
 
   return (
     <div
-      className={joinClassNames(styles.dropdownContainer, props.className)}
+      className={joinClassNames(
+        styles.dropdownContainer,
+        props.className,
+        props.label && styles.gridLayout
+      )}
       id={props.id}
     >
       {props.label && (
         <Text
           className={styles.label}
           style={{
-            flex: props.labelFlex
+            ...(props.labelGreed && { gridColumn: `span ${props.labelGreed}` })
           }}
         >
           {props.label}
@@ -66,7 +70,7 @@ export const Dropdown = (props: DropdownProps) => {
       <div
         className={joinClassNames(styles.dropdownMenuContainer)}
         style={{
-          flex: props.inputFlex
+          ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })
         }}
       >
         {isOpened && (
