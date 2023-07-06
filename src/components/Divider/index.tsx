@@ -6,12 +6,17 @@ import styles from './styles.module.css'
 export interface DividerProps {
   className?: string
   style?: React.CSSProperties
+  isDashed?: boolean
 }
 
 export const Divider = (props: DividerProps) => {
   return (
     <hr
-      className={joinClassNames(styles.divider, props.className)}
+      className={joinClassNames(
+        styles.divider,
+        props.isDashed && styles.dashed,
+        props.className
+      )}
       style={props.style}
     />
   )

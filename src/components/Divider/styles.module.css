@@ -3,3 +3,14 @@
   height: 1px;
   background-color: var(--figma-color-border);
 }
+
+.dashed {
+  background: linear-gradient(
+    90deg,
+    var(--figma-color-border),
+    var(--figma-color-border) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-size: 5px 2px;
+}
