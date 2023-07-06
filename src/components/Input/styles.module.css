@@ -1,13 +1,14 @@
 .inputContainer {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--space-small);
   align-items: center;
   justify-content: flex-start;
 }
 
 .input {
-  flex: var(--inputConteiner-input-flex-width);
+  grid-column: span var(--inputConteiner-input-grid-width);
   height: 30px;
   border-radius: var(--border-radius-2);
   outline: 1px solid transparent;
@@ -25,7 +26,7 @@
 }
 
 .label {
-  flex: var(--inputConteiner-label-flex-width);
+  grid-column: span var(--inputConteiner-label-grid-width);
   padding-left: var(--space-extra-small);
 }
 

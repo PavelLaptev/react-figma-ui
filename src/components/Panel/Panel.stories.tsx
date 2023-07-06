@@ -4,6 +4,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Panel } from '.'
 import { Stack } from '../Stack'
+import { Input } from '../Input'
+import { Dropdown } from '../Dropdown'
 import { PanelHeader } from '../PanelHeader'
 
 const meta: Meta<typeof Panel> = {
@@ -18,6 +20,29 @@ const PanelContent = () => {
     <>
       <Stack>
         <PanelHeader title='Panel Header' />
+        <Input
+          id='input'
+          label='Input label'
+          onChange={(value) => console.log(value)}
+        />
+        <Dropdown
+          label='Dropdown label'
+          optionsSections={[
+            {
+              options: [
+                {
+                  id: 'option-1',
+                  label: 'Option 1'
+                },
+                {
+                  id: 'option-2',
+                  label: 'Option 2'
+                }
+              ]
+            }
+          ]}
+          onChange={(value) => console.log(value)}
+        />
       </Stack>
     </>
   )

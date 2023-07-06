@@ -58,8 +58,8 @@
     0px 10px 24px rgba(0, 0, 0, 0.18), 0px 2px 5px rgba(0, 0, 0, 0.15);
 
   /* input */
-  --inputConteiner-label-flex-width: 4;
-  --inputConteiner-input-flex-width: 6;
+  --inputConteiner-label-grid-width: 5;
+  --inputConteiner-input-grid-width: 7;
 }
 
 @layer default-kit-global {

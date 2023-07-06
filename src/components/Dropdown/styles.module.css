@@ -1,18 +1,19 @@
 .dropdownContainer {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--space-small);
   align-items: center;
   justify-content: flex-start;
 }
 
 .label {
-  flex: var(--inputConteiner-label-flex-width);
+  grid-column: span var(--inputConteiner-label-grid-width);
   padding-left: var(--space-extra-small);
 }
 
 .dropdownMenuContainer {
-  flex: var(--inputConteiner-input-flex-width);
+  grid-column: span var(--inputConteiner-input-grid-width);
   position: relative;
 }
 
@@ -22,7 +23,7 @@
   justify-content: flex-start;
   gap: var(--space-extra-small);
   width: 100%;
-  height: 32px;
+  height: 30px;
   border-radius: var(--border-radius-2);
   border: 1px solid transparent;
   padding: 0 var(--space-extra-small);
