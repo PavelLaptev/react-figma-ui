@@ -30,7 +30,7 @@ export const Input = (props: InputProps) => {
   }
 
   return (
-    <label className={joinClassNames(styles.inputContainer, props.className)}>
+    <div className={joinClassNames(styles.inputContainer, props.className)}>
       {props.label && (
         <Text
           className={styles.label}
@@ -55,7 +55,7 @@ export const Input = (props: InputProps) => {
           flex: props.inputFlex
         }}
       />
-    </label>
+    </div>
   )
 }
 
