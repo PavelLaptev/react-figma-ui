@@ -30,10 +30,7 @@ export const Input = (props: InputProps) => {
   }
 
   return (
-    <label
-      htmlFor={props.id}
-      className={joinClassNames(styles.inputContainer, props.className)}
-    >
+    <label className={joinClassNames(styles.inputContainer, props.className)}>
       {props.label && (
         <Text
           className={styles.label}
