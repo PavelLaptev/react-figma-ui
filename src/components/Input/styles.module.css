@@ -21,8 +21,8 @@
 }
 
 .input:focus {
-  outline: none;
-  outline: 2px solid var(--figma-color-border-brand-strong);
+  outline: 1px solid var(--figma-color-border-brand-strong);
+  border: 1px solid var(--figma-color-border-brand-strong);
 }
 
 .label {
