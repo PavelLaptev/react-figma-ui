@@ -14,6 +14,7 @@
 .label {
   grid-column: span var(--inputConteiner-label-grid-width);
   padding-left: var(--space-extra-small);
+  opacity: var(--input-label-opacity);
 }
 
 .dropdownMenuContainer {
