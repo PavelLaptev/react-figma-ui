@@ -1,7 +1,8 @@
-// Button.stories.ts|tsx
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Input } from '.'
+import { Icon } from '../Icon'
 
 const meta: Meta<typeof Input> = {
   component: Input
@@ -33,5 +34,18 @@ export const WithLabel: Story = {
     disabled: false,
     value: '',
     hasOutline: true
+  }
+}
+
+export const WithIcon: Story = {
+  args: {
+    id: 'input',
+    onChange: (value) => {
+      console.log(value)
+    },
+    disabled: false,
+    value: 'Custom value',
+    hasOutline: true,
+    leftIcon: <Icon name='color-styles' size='32' />
   }
 }

@@ -193,6 +193,7 @@ interface InputProps {
     hasOutline?: boolean;
     labelGreed?: number;
     inputGreed?: number;
+    leftIcon?: React.ReactNode;
 }
 declare const Input: {
     (props: InputProps): JSX.Element;

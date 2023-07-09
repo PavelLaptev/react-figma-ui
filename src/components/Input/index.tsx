@@ -15,6 +15,7 @@ export interface InputProps {
   hasOutline?: boolean
   labelGreed?: number
   inputGreed?: number
+  leftIcon?: React.ReactNode
 }
 
 export const Input = (props: InputProps) => {
@@ -47,20 +48,26 @@ export const Input = (props: InputProps) => {
           {props.label}
         </Text>
       )}
-      <input
-        id={props.id}
-        type='text'
-        value={value}
-        disabled={props.disabled}
-        onChange={onChange}
-        className={joinClassNames(
-          styles.input,
-          props.hasOutline && styles.hasOutline
+      <div className={styles.inputWrapper}>
+        {props.leftIcon && (
+          <div className={styles.leftIcon}>{props.leftIcon}</div>
         )}
-        style={{
-          ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })
-        }}
-      />
+        <input
+          id={props.id}
+          type='text'
+          value={value}
+          disabled={props.disabled}
+          onChange={onChange}
+          className={joinClassNames(
+            styles.input,
+            props.hasOutline && styles.hasOutline,
+            props.leftIcon && styles.hasLeftIcon
+          )}
+          style={{
+            ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })
+          }}
+        />
+      </div>
     </div>
   )
 }
