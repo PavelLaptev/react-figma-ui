@@ -19,8 +19,8 @@ export interface InputProps {
   inputGreed?: number
   leftIcon?: React.ReactNode
   onChange: (value: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  onFocus?: (value: string) => void
+  onBlur?: (value: string) => void
 }
 
 export const Input = (props: InputProps) => {
@@ -66,8 +66,8 @@ export const Input = (props: InputProps) => {
           value={value}
           disabled={props.disabled}
           onChange={onChange}
-          onFocus={props.onFocus}
-          onBlur={props.onBlur}
+          onFocus={(e) => props.onFocus && props.onFocus(e.target.value)}
+          onBlur={(e) => props.onBlur && props.onBlur(e.target.value)}
           placeholder={props.placeholder}
           className={joinClassNames(
             styles.input,

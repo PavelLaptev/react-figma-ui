@@ -198,8 +198,8 @@ interface InputProps {
     inputGreed?: number;
     leftIcon?: React.ReactNode;
     onChange: (value: string) => void;
-    onFocus?: () => void;
-    onBlur?: () => void;
+    onFocus?: (value: string) => void;
+    onBlur?: (value: string) => void;
 }
 declare const Input: {
     (props: InputProps): JSX.Element;
