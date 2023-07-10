@@ -37,6 +37,19 @@ export const WithLabel: Story = {
   }
 }
 
+export const WithPlaceholder: Story = {
+  args: {
+    id: 'input',
+    placeholder: 'Placeholder',
+    onChange: (value) => {
+      console.log(value)
+    },
+    disabled: false,
+    value: '',
+    hasOutline: true
+  }
+}
+
 export const WithIcon: Story = {
   args: {
     id: 'input',

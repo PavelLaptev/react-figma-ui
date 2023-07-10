@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from 'react'
 
-import { Icon } from '../Icon'
 import { Text } from '../Text'
 
 import { joinClassNames } from '../../utils/joinClassNames'
@@ -25,7 +24,7 @@ export interface OverlayListProps {
   optionsSections: SectionProps[]
   onClick: (id: string) => void
   onOutsideClick?: () => void
-  blockPointerEventsFor?: HTMLElement
+  trigger?: HTMLElement
 }
 
 export const OverlayList = (props: OverlayListProps) => {
@@ -63,19 +62,17 @@ export const OverlayList = (props: OverlayListProps) => {
   }, [])
 
   useEffect(() => {
-    // block any pointer events outside of the dropdown
+    if (props.trigger) {
+      // prevent pointer events on the trigger
+      props.trigger.style.pointerEvents = 'none'
 
-    if (props.blockPointerEventsFor && dropdownRef.current) {
-      props.blockPointerEventsFor.style.pointerEvents = 'none'
-      dropdownRef.current.style.pointerEvents = 'auto'
-    }
-
-    return () => {
-      if (props.blockPointerEventsFor) {
-        props.blockPointerEventsFor.style.pointerEvents = 'auto'
+      return () => {
+        if (props.trigger) {
+          props.trigger.style.pointerEvents = 'auto'
+        }
       }
     }
-  }, [props.blockPointerEventsFor])
+  }, [props.trigger])
 
   return (
     <div

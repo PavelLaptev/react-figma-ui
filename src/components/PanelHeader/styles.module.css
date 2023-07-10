@@ -32,6 +32,10 @@
   fill: var(--figma-color-icon-secondary);
 }
 
+.backIcon {
+  fill: var(--figma-color-icon-secondary);
+}
+
 /* IS ACTIVE CLASSES */
 
 .isActive .title {

@@ -75,3 +75,50 @@ export const AllInOne: Story = {
     ]
   }
 }
+
+const TemplateAbsolutePosition = () => {
+  const [show, setShow] = React.useState(false)
+  const ref = React.useRef<HTMLButtonElement>(null)
+
+  return (
+    <div style={{ height: 200, position: 'relative' }}>
+      <button
+        ref={ref}
+        onClick={() => {
+          console.log('click button')
+          setShow(true)
+        }}
+      >
+        Toggle
+      </button>
+
+      {show && (
+        <OverlayList
+          trigger={ref.current}
+          onClick={(id: string) => {
+            console.log(id)
+          }}
+          onOutsideClick={() => setShow(false)}
+          optionsSections={[
+            {
+              options: [
+                {
+                  id: 'option-1',
+                  label: 'Option 1'
+                },
+                {
+                  id: 'option-2',
+                  label: 'Option 2'
+                }
+              ]
+            }
+          ]}
+        />
+      )}
+    </div>
+  )
+}
+
+export const AbsolutePosition: Story = {
+  render: () => <TemplateAbsolutePosition />
+}

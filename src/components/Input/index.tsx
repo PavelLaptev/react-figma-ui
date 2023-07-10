@@ -9,9 +9,11 @@ export interface InputProps {
   id?: string
   label?: string
   className?: string
+  style?: React.CSSProperties
   value?: string
   disabled?: boolean
   onChange: (value: string) => void
+  placeholder?: string
   hasOutline?: boolean
   labelGreed?: number
   inputGreed?: number
@@ -37,6 +39,9 @@ export const Input = (props: InputProps) => {
         props.className,
         props.label && styles.gridLayout
       )}
+      style={{
+        ...props.style
+      }}
     >
       {props.label && (
         <Text
@@ -58,6 +63,7 @@ export const Input = (props: InputProps) => {
           value={value}
           disabled={props.disabled}
           onChange={onChange}
+          placeholder={props.placeholder}
           className={joinClassNames(
             styles.input,
             props.hasOutline && styles.hasOutline,

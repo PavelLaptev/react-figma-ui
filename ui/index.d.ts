@@ -114,6 +114,7 @@ type PanelHeaderProps = {
     title?: string;
     isActive?: boolean;
     onClick?: () => void;
+    hasBackButton?: boolean;
     iconButtons?: IconButtonProps[];
 };
 declare const PanelHeader: React.ForwardRefExoticComponent<PanelHeaderProps & React.RefAttributes<HTMLDivElement>>;
@@ -151,7 +152,7 @@ interface OverlayListProps {
     optionsSections: SectionProps[];
     onClick: (id: string) => void;
     onOutsideClick?: () => void;
-    blockPointerEventsFor?: HTMLElement;
+    trigger?: HTMLElement;
 }
 declare const OverlayList: (props: OverlayListProps) => JSX.Element;
 
@@ -187,9 +188,11 @@ interface InputProps {
     id?: string;
     label?: string;
     className?: string;
+    style?: React.CSSProperties;
     value?: string;
     disabled?: boolean;
     onChange: (value: string) => void;
+    placeholder?: string;
     hasOutline?: boolean;
     labelGreed?: number;
     inputGreed?: number;

@@ -28,6 +28,14 @@ export const WithTitleAndIcon: Story = {
   }
 }
 
+export const WithBackButton: Story = {
+  args: {
+    title: 'Panel Header',
+    isActive: true,
+    hasBackButton: true
+  }
+}
+
 export const WithIcon: Story = {
   args: {
     isActive: false,
@@ -87,7 +95,7 @@ const DropdownTemplate = () => {
                       right: 0,
                       zIndex: 1
                     }}
-                    blockPointerEventsFor={panelHeaderRef.current}
+                    trigger={panelHeaderRef.current}
                     onClick={handleMenuClose}
                     onOutsideClick={handleMenuClose}
                     optionsSections={[
