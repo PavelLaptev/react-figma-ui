@@ -191,13 +191,15 @@ interface InputProps {
     style?: React.CSSProperties;
     value?: string;
     disabled?: boolean;
-    onChange: (value: string) => void;
     isInvalid?: boolean;
     placeholder?: string;
     hasOutline?: boolean;
     labelGreed?: number;
     inputGreed?: number;
     leftIcon?: React.ReactNode;
+    onChange: (value: string) => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
 }
 declare const Input: {
     (props: InputProps): JSX.Element;

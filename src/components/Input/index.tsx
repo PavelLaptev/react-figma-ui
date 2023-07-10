@@ -12,13 +12,15 @@ export interface InputProps {
   style?: React.CSSProperties
   value?: string
   disabled?: boolean
-  onChange: (value: string) => void
   isInvalid?: boolean
   placeholder?: string
   hasOutline?: boolean
   labelGreed?: number
   inputGreed?: number
   leftIcon?: React.ReactNode
+  onChange: (value: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
 }
 
 export const Input = (props: InputProps) => {
@@ -64,6 +66,8 @@ export const Input = (props: InputProps) => {
           value={value}
           disabled={props.disabled}
           onChange={onChange}
+          onFocus={props.onFocus}
+          onBlur={props.onBlur}
           placeholder={props.placeholder}
           className={joinClassNames(
             styles.input,
