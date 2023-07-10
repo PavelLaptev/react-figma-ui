@@ -62,9 +62,10 @@ export const OverlayList = (props: OverlayListProps) => {
   }, [])
 
   useEffect(() => {
-    if (props.trigger) {
+    if (props.trigger && dropdownRef.current) {
       // prevent pointer events on the trigger
       props.trigger.style.pointerEvents = 'none'
+      dropdownRef.current.style.pointerEvents = 'auto'
 
       return () => {
         if (props.trigger) {
@@ -72,7 +73,7 @@ export const OverlayList = (props: OverlayListProps) => {
         }
       }
     }
-  }, [props.trigger])
+  }, [props.trigger, dropdownRef])
 
   return (
     <div

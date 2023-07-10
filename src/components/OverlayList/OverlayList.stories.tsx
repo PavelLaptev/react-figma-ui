@@ -78,12 +78,11 @@ export const AllInOne: Story = {
 
 const TemplateAbsolutePosition = () => {
   const [show, setShow] = React.useState(false)
-  const ref = React.useRef<HTMLButtonElement>(null)
+  const ref = React.useRef<HTMLDivElement>(null)
 
   return (
-    <div style={{ height: 200, position: 'relative' }}>
+    <div style={{ height: 200, position: 'relative' }} ref={ref}>
       <button
-        ref={ref}
         onClick={() => {
           console.log('click button')
           setShow(true)
