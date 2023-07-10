@@ -192,6 +192,7 @@ interface InputProps {
     value?: string;
     disabled?: boolean;
     onChange: (value: string) => void;
+    isInvalid?: boolean;
     placeholder?: string;
     hasOutline?: boolean;
     labelGreed?: number;

@@ -13,6 +13,7 @@ export interface InputProps {
   value?: string
   disabled?: boolean
   onChange: (value: string) => void
+  isInvalid?: boolean
   placeholder?: string
   hasOutline?: boolean
   labelGreed?: number
@@ -67,7 +68,8 @@ export const Input = (props: InputProps) => {
           className={joinClassNames(
             styles.input,
             props.hasOutline && styles.hasOutline,
-            props.leftIcon && styles.hasLeftIcon
+            props.leftIcon && styles.hasLeftIcon,
+            props.isInvalid && styles.isInvalid
           )}
           style={{
             ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })

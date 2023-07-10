@@ -62,3 +62,16 @@ export const WithIcon: Story = {
     leftIcon: <Icon name='color-styles' size='32' />
   }
 }
+
+export const WithError: Story = {
+  args: {
+    id: 'input',
+    onChange: (value) => {
+      console.log(value)
+    },
+    disabled: false,
+    value: 'Custom value',
+    hasOutline: true,
+    isInvalid: true
+  }
+}

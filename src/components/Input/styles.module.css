@@ -65,3 +65,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.isInvalid,
+.isInvalid:hover {
+  border: 1px solid var(--figma-color-border-danger-strong);
+}
+
+.isInvalid:focus {
+  outline: 1px solid var(--figma-color-border-danger-strong);
+  border: 1px solid var(--figma-color-border-danger-strong);
+}
