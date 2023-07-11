@@ -26,10 +26,6 @@ export interface InputProps {
 export const Input = (props: InputProps) => {
   const [value, setValue] = React.useState(props.value)
 
-  React.useEffect(() => {
-    setValue(props.value)
-  }, [props.value])
-
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
     props.onChange(event.target.value)
