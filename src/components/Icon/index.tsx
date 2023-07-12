@@ -40,9 +40,12 @@ export const Icon = (props: IconProps) => {
           width={`${props.size}px`}
           height={`${props.size}px`}
           viewBox={`0 0 ${props.size} ${props.size}`}
-          fillRule='evenodd'
         >
-          <path d={(getIcons(props.size) as any)[props.name]} />
+          <path
+            fillRule='evenodd'
+            clipRule='evenodd'
+            d={(getIcons(props.size) as any)[props.name]}
+          />
         </svg>
       )}
     </i>
