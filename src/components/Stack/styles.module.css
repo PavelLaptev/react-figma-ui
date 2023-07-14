@@ -1,14 +1,16 @@
-.stack {
-  display: flex;
-  width: 100%;
-}
+@layer default-kit-component {
+  .stack {
+    display: flex;
+    width: 100%;
+  }
 
-.leftRightPadding {
-  padding-left: var(--space-extra-small);
-  padding-right: var(--space-extra-small);
-}
+  .leftRightPadding {
+    padding-left: var(--space-extra-small);
+    padding-right: var(--space-extra-small);
+  }
 
-.topBottomPadding {
-  padding-top: var(--space-extra-small);
-  padding-bottom: var(--space-extra-small);
+  .topBottomPadding {
+    padding-top: var(--space-extra-small);
+    padding-bottom: var(--space-extra-small);
+  }
 }
