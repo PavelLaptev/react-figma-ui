@@ -79,6 +79,18 @@
     font-size: var(--font-size-11);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-16);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* hide scrollbar */
+  body::-webkit-scrollbar {
+    display: none;
   }
 
   div,
