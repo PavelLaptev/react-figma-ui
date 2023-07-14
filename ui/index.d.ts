@@ -197,7 +197,7 @@ interface InputProps {
     labelGreed?: number;
     inputGreed?: number;
     leftIcon?: React.ReactNode;
-    onChange: (value: string) => void;
+    onChange?: (value: string) => void;
     onFocus?: (value: string) => void;
     onBlur?: (value: string) => void;
 }

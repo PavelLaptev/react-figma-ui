@@ -18,7 +18,7 @@ export interface InputProps {
   labelGreed?: number
   inputGreed?: number
   leftIcon?: React.ReactNode
-  onChange: (value: string) => void
+  onChange?: (value: string) => void
   onFocus?: (value: string) => void
   onBlur?: (value: string) => void
 }
@@ -28,7 +28,7 @@ export const Input = (props: InputProps) => {
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
-    props.onChange(event.target.value)
+    props.onChange && props.onChange(event.target.value)
   }
 
   return (
