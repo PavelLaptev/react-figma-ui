@@ -61,6 +61,20 @@
   /* input */
   --inputConteiner-label-grid-width: 5;
   --inputConteiner-input-grid-width: 7;
+
+  /* global colors */
+
+  --figma-color-bg-menu: #1e1e1e;
+  --figma-color-bg-menu-disabled: #757575;
+  --figma-color-bg-menu-hover: #2c2c2c;
+  --figma-color-bg-menu-pressed: #2c2c2c;
+  --figma-color-bg-menu-secondary: #383838;
+  --figma-color-bg-menu-selected: #0d99ff;
+  --figma-color-bg-menu-selected-hover: #007be5;
+  --figma-color-bg-menu-selected-pressed: #007be5;
+  --figma-color-bg-menu-selected-secondary: #394360;
+  --figma-color-bg-menu-selected-tertiary: #394360;
+  --figma-color-bg-menu-tertiary: #444444;
 }
 
 @layer default-kit-global {

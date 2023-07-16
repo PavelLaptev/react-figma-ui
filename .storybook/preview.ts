@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react'
 import { themes } from '@storybook/theming'
-import '../styles/all.css'
+import '../styles/global.css'
+import '../styles/themes.css'
 
 export const parameters = {
   darkMode: {
