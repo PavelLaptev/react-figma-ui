@@ -42,12 +42,16 @@ interface PanelProps {
     children?: React.ReactNode;
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
+    topBorder?: boolean;
+    bottomBorder?: boolean;
 }
 declare const Panel: {
     (props: PanelProps): JSX.Element;
     defaultProps: {
         hasLeftRightPadding: boolean;
         hasTopBottomPadding: boolean;
+        topBorder: boolean;
+        bottomBorder: boolean;
     };
 };
 
