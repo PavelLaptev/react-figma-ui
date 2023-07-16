@@ -75,6 +75,14 @@
   --figma-color-bg-menu-selected-secondary: #394360;
   --figma-color-bg-menu-selected-tertiary: #394360;
   --figma-color-bg-menu-tertiary: #444444;
+  --figma-color-border-menu: #383838;
+  --figma-color-border-menu-disabled: #383838;
+  --figma-color-border-menu-disabled-strong: #383838;
+  --figma-color-border-menu-onselected: #0a6dc2;
+  --figma-color-border-menu-onselected-strong: rgba(255, 255, 255, 1);
+  --figma-color-border-menu-selected: #0c8ce9;
+  --figma-color-border-menu-selected-strong: #7cc4f8;
+  --figma-color-border-menu-strong: rgba(255, 255, 255, 1);
   --figma-color-text-menu: rgba(255, 255, 255, 1);
   --figma-color-text-menu-danger: #fca397;
   --figma-color-text-menu-disabled: rgba(255, 255, 255, 0.4);
