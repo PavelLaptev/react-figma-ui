@@ -6,6 +6,7 @@
 
 .fullWidth {
   display: block;
+  width: 100%;
 }
 
 .button button {

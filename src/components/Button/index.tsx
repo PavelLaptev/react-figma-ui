@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useCallback, KeyboardEvent } from 'react'
+import React, { MouseEventHandler } from 'react'
 
 import { LoadingIndicator } from '../LoadingIndicator'
 import { joinClassNames } from '../../utils/joinClassNames'
@@ -16,19 +16,6 @@ export interface ButtonProps {
 }
 
 export const Button = (props: ButtonProps) => {
-  const handleKeyDown = useCallback(
-    function (event: KeyboardEvent<HTMLButtonElement>): void {
-      if (event.key !== 'Escape') {
-        return
-      }
-      if (props.propagateEscapeKeyDown === false) {
-        event.stopPropagation()
-      }
-      event.currentTarget.blur()
-    },
-    [props.propagateEscapeKeyDown]
-  )
-
   return (
     <div
       className={joinClassNames(
@@ -51,11 +38,6 @@ export const Button = (props: ButtonProps) => {
           props.disabled === true || props.loading === true
             ? undefined
             : props.onClick
-        }
-        onKeyDown={
-          props.disabled === true || props.loading === true
-            ? undefined
-            : handleKeyDown
         }
         tabIndex={props.disabled === true ? -1 : 0}
       >
