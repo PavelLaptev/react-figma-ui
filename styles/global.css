@@ -75,6 +75,35 @@
   --figma-color-bg-menu-selected-secondary: #394360;
   --figma-color-bg-menu-selected-tertiary: #394360;
   --figma-color-bg-menu-tertiary: #444444;
+  --figma-color-text-menu: rgba(255, 255, 255, 1);
+  --figma-color-text-menu-danger: #fca397;
+  --figma-color-text-menu-disabled: rgba(255, 255, 255, 0.4);
+  --figma-color-text-menu-hover: rgba(255, 255, 255, 1);
+  --figma-color-text-menu-ondisabled: #1e1e1e;
+  --figma-color-text-menu-onselected: rgba(255, 255, 255, 1);
+  --figma-color-text-menu-secondary: rgba(255, 255, 255, 0.7);
+  --figma-color-text-menu-secondary-hover: rgba(255, 255, 255, 1);
+  --figma-color-text-menu-selected: #7cc4f8;
+  --figma-color-text-menu-selected-secondary: #7cc4f8;
+  --figma-color-text-menu-selected-tertiary: #7cc4f8;
+  --figma-color-text-menu-tertiary: rgba(255, 255, 255, 0.4);
+  --figma-color-text-menu-tertiary-hover: rgba(255, 255, 255, 1);
+  --figma-color-text-menu-warning: #f7d15f;
+  --figma-color-icon-menu: rgba(255, 255, 255, 1);
+  --figma-color-icon-menu-danger: #e03e1a;
+  --figma-color-icon-menu-disabled: rgba(255, 255, 255, 0.4);
+  --figma-color-icon-menu-hover: rgba(255, 255, 255, 1);
+  --figma-color-icon-menu-ondisabled: #1e1e1e;
+  --figma-color-icon-menu-onselected: rgba(255, 255, 255, 1);
+  --figma-color-icon-menu-pressed: #0c8ce9;
+  --figma-color-icon-menu-secondary: rgba(255, 255, 255, 0.7);
+  --figma-color-icon-menu-secondary-hover: rgba(255, 255, 255, 1);
+  --figma-color-icon-menu-selected: #7cc4f8;
+  --figma-color-icon-menu-selected-secondary: #7cc4f8;
+  --figma-color-icon-menu-selected-tertiary: #7cc4f8;
+  --figma-color-icon-menu-tertiary: rgba(255, 255, 255, 0.4);
+  --figma-color-icon-menu-tertiary-hover: rgba(255, 255, 255, 1);
+  --figma-color-icon-menu-warning: #f3c11b;
 }
 
 @layer default-kit-global {
