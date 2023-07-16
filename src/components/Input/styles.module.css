@@ -8,6 +8,7 @@
 .inputWrapper {
   display: flex;
   position: relative;
+  flex: 1;
   grid-column: span var(--inputConteiner-input-grid-width);
 }
 
