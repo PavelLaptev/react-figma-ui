@@ -1,7 +1,7 @@
 @layer default-kit-component {
   .text {
     color: var(--figma-color-text);
-    pointer-events: none;
+    user-select: none;
   }
 
   .regular {
