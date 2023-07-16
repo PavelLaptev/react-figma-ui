@@ -8,6 +8,7 @@ export interface ButtonProps {
   label: string
   danger?: boolean
   disabled?: boolean
+  className?: string
   fullWidth?: boolean
   loading?: boolean
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -24,7 +25,8 @@ export const Button = (props: ButtonProps) => {
         props.danger === true ? styles.danger : null,
         props.fullWidth === true ? styles.fullWidth : null,
         props.disabled === true ? styles.disabled : null,
-        props.loading === true ? styles.loading : null
+        props.loading === true ? styles.loading : null,
+        props.className
       )}
     >
       {props.loading === true ? (

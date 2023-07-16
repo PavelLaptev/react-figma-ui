@@ -4,6 +4,7 @@ interface ButtonProps {
     label: string;
     danger?: boolean;
     disabled?: boolean;
+    className?: string;
     fullWidth?: boolean;
     loading?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
