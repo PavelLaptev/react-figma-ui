@@ -18,7 +18,6 @@
 }
 
 .dropdownMenuContainer {
-  flex: 1;
   grid-column: span var(--inputConteiner-input-grid-width);
   position: relative;
 }
