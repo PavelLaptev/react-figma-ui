@@ -29,12 +29,12 @@ interface LoadingIndicatorProps {
 }
 declare const LoadingIndicator: (props: LoadingIndicatorProps) => JSX.Element;
 
-interface DividerProps$1 {
+interface DividerProps {
     className?: string;
     style?: React.CSSProperties;
     isDashed?: boolean;
 }
-declare const Divider: (props: DividerProps$1) => JSX.Element;
+declare const Divider: (props: DividerProps) => JSX.Element;
 
 interface PanelProps {
     className?: string;
@@ -213,7 +213,7 @@ declare const Input: {
     };
 };
 
-interface DividerProps {
+interface TabsProps {
     className?: string;
     style?: React.CSSProperties;
     value?: string;
@@ -224,7 +224,7 @@ interface DividerProps {
     onChange?: (value: string) => void;
     iconButtons?: IconButtonProps[];
 }
-declare const Tabs: (props: DividerProps) => JSX.Element;
+declare const Tabs: (props: TabsProps) => JSX.Element;
 
 interface ToggleRowProps {
     id: string;

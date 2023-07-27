@@ -7,7 +7,7 @@ import { Text } from '../Text'
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
-export interface DividerProps {
+export interface TabsProps {
   className?: string
   style?: React.CSSProperties
   value?: string
@@ -19,7 +19,7 @@ export interface DividerProps {
   iconButtons?: IconButtonProps[]
 }
 
-export const Tabs = (props: DividerProps) => {
+export const Tabs = (props: TabsProps) => {
   const [value, setValue] = React.useState(props.value)
 
   const handleChange = (value: string) => {
