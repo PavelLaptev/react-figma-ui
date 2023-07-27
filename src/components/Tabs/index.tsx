@@ -38,6 +38,7 @@ export const Tabs = (props: TabsProps) => {
       <div className={styles.tabs}>
         {props.options?.map((option) => (
           <div
+            key={option.value}
             className={joinClassNames(
               styles.tabItem,
               value === option.value && styles.activeTab
