@@ -105,6 +105,10 @@ interface StackProps {
     direction?: 'row' | 'column';
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
+    hasLeftPadding?: boolean;
+    hasRightPadding?: boolean;
+    hasTopPadding?: boolean;
+    hasBottomPadding?: boolean;
     onClick?: () => void;
 }
 declare const Stack: {

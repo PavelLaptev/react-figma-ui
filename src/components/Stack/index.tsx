@@ -11,6 +11,10 @@ export interface StackProps {
   direction?: 'row' | 'column'
   hasLeftRightPadding?: boolean
   hasTopBottomPadding?: boolean
+  hasLeftPadding?: boolean
+  hasRightPadding?: boolean
+  hasTopPadding?: boolean
+  hasBottomPadding?: boolean
   onClick?: () => void
 }
 
@@ -21,7 +25,11 @@ export const Stack = (props: StackProps) => {
         styles.stack,
         props.className,
         props.hasLeftRightPadding && styles.leftRightPadding,
-        props.hasTopBottomPadding && styles.topBottomPadding
+        props.hasTopBottomPadding && styles.topBottomPadding,
+        props.hasLeftPadding && styles.leftPadding,
+        props.hasRightPadding && styles.rightPadding,
+        props.hasTopPadding && styles.topPadding,
+        props.hasBottomPadding && styles.bottomPadding
       )}
       onClick={props.onClick}
       style={{

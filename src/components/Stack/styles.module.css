@@ -13,4 +13,20 @@
     padding-top: var(--space-extra-small);
     padding-bottom: var(--space-extra-small);
   }
+
+  .leftPadding {
+    padding-left: var(--space-extra-small);
+  }
+
+  .rightPadding {
+    padding-right: var(--space-extra-small);
+  }
+
+  .topPadding {
+    padding-top: var(--space-extra-small);
+  }
+
+  .bottomPadding {
+    padding-bottom: var(--space-extra-small);
+  }
 }
