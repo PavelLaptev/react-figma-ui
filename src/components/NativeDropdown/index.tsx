@@ -22,42 +22,14 @@ export interface NativeDropdownProps {
   inputGreed?: number
 }
 
-const getSelectWidth = (
-  options: OptionProps[],
-  value: string,
-  element: HTMLSelectElement
-) => {
-  if (element) {
-    const text = options.find((option) => option.id === value)?.label
-
-    // get current text width
-    const canvas = new OffscreenCanvas(0, 0) as any
-    const ctx = canvas.getContext('2d')
-    ctx.font = '12px Inter, sans-serif'
-
-    const textWidth = Math.round(ctx.measureText(text).width)
-
-    // set select width
-    return `${textWidth + 16}px`
-  }
-
-  return 'auto'
-}
-
 export const NativeDropdown = (props: NativeDropdownProps) => {
-  const selectRef = React.useRef<HTMLSelectElement>(null)
   const [value, setValue] = React.useState(props.value)
-  const [selectWidth, setSelectWidth] = React.useState('auto')
 
   React.useEffect(() => {
     if (props.value) {
       setValue(props.value)
     }
   }, [props.value])
-
-  React.useEffect(() => {
-    setSelectWidth(getSelectWidth(props.options, value, selectRef.current))
-  }, [value])
 
   return (
     <div
@@ -83,26 +55,14 @@ export const NativeDropdown = (props: NativeDropdownProps) => {
         style={{
           ...(props.inputGreed && { gridColumn: `span ${props.inputGreed}` })
         }}
-        onMouseEnter={() => {
-          setSelectWidth('100%')
-        }}
-        onMouseLeave={() => {
-          setSelectWidth(
-            getSelectWidth(props.options, value, selectRef.current)
-          )
-        }}
       >
         <select
           className={styles.dropdown}
           value={value}
-          ref={selectRef}
           onChange={(event) => {
             // console.log(event.target.value)
             setValue(event.target.value)
             props.onChange(event.target.value)
-          }}
-          style={{
-            width: selectWidth
           }}
         >
           {props.options.map((option) => (
