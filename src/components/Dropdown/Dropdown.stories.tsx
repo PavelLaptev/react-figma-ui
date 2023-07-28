@@ -14,6 +14,7 @@ type Story = StoryObj<typeof Dropdown>
 
 export const Default: Story = {
   args: {
+    label: 'Social',
     value: 'github',
     onChange: (id) => {
       console.log(id)

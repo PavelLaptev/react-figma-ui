@@ -158,6 +158,7 @@ interface OverlayListProps {
     onClick: (id: string) => void;
     onOutsideClick?: () => void;
     trigger?: HTMLElement;
+    maxHeight?: number;
 }
 declare const OverlayList: (props: OverlayListProps) => JSX.Element;
 
@@ -170,8 +171,24 @@ interface DropdownProps {
     onChange: (value: string) => void;
     labelGreed?: number;
     inputGreed?: number;
+    maxHeight?: number;
 }
 declare const Dropdown: (props: DropdownProps) => JSX.Element;
+
+interface NativeDropdownProps {
+    label?: string;
+    id?: string;
+    className?: string;
+    value?: string;
+    options: {
+        id: string;
+        label: string;
+    }[];
+    onChange: (value: string) => void;
+    labelGreed?: number;
+    inputGreed?: number;
+}
+declare const NativeDropdown: (props: NativeDropdownProps) => JSX.Element;
 
 interface CheckboxProps {
     className?: string;
@@ -235,4 +252,4 @@ interface ToggleRowProps {
 }
 declare const ToggleRow: (props: ToggleRowProps) => JSX.Element;
 
-export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle, ToggleRow };
+export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, NativeDropdown, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle, ToggleRow };

@@ -76,6 +76,49 @@ export const AllInOne: Story = {
   }
 }
 
+export const AllInOneWithScroll: Story = {
+  args: {
+    maxHeight: 120,
+    hasShift: true,
+    onClick: (id: string) => {
+      console.log(id)
+    },
+    optionsSections: [
+      {
+        options: [
+          {
+            id: 'option-1',
+            label: 'Option 1',
+            caption: 'caption',
+            icon: <Icon name='code' size='16' />
+          },
+          {
+            id: 'option-2',
+            label: 'Option 2',
+            caption: 'caption',
+            icon: <Icon name='text' size='32' />
+          }
+        ]
+      },
+      {
+        title: 'Section title',
+        options: [
+          {
+            id: 'option-3',
+            label: 'Option 3',
+            caption: 'caption'
+          },
+          {
+            id: 'option-4',
+            label: 'Option 4',
+            caption: 'caption'
+          }
+        ]
+      }
+    ]
+  }
+}
+
 const TemplateAbsolutePosition = () => {
   const [show, setShow] = React.useState(false)
   const ref = React.useRef<HTMLDivElement>(null)

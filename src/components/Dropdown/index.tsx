@@ -17,6 +17,7 @@ export interface DropdownProps {
   onChange: (value: string) => void
   labelGreed?: number
   inputGreed?: number
+  maxHeight?: number
 }
 
 export const Dropdown = (props: DropdownProps) => {
@@ -75,6 +76,7 @@ export const Dropdown = (props: DropdownProps) => {
       >
         {isOpened && (
           <OverlayList
+            maxHeight={props.maxHeight}
             className={styles.overlayList}
             optionsSections={props.optionsSections}
             onClick={(id) => {

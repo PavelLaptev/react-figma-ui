@@ -25,6 +25,7 @@ export interface OverlayListProps {
   onClick: (id: string) => void
   onOutsideClick?: () => void
   trigger?: HTMLElement
+  maxHeight?: number
 }
 
 export const OverlayList = (props: OverlayListProps) => {
@@ -79,6 +80,7 @@ export const OverlayList = (props: OverlayListProps) => {
     <div
       className={joinClassNames(styles.contextMenu, props.className)}
       style={{
+        maxHeight: `${props.maxHeight}px`,
         ...props.style
       }}
       ref={dropdownRef}

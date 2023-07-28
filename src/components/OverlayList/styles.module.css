@@ -6,6 +6,13 @@
     background-color: var(--figma-color-bg-menu);
     padding: var(--space-extra-small) 0;
     box-shadow: var(--elevation-400-menu-panel);
+    overflow-y: auto;
+  }
+
+  /* hide scrollbar */
+
+  .contextMenu::-webkit-scrollbar {
+    display: none;
   }
 
   .section {
@@ -71,7 +78,7 @@
 
   .sectionTitle {
     color: var(--figma-color-text-menu);
-    opacity: var(--opacity-30);
+    opacity: 0.4;
     padding-left: var(--space-extra-small);
   }
 }
