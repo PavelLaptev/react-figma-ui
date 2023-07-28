@@ -42,6 +42,10 @@ interface PanelProps {
     children?: React.ReactNode;
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
+    hasLeftPadding?: boolean;
+    hasRightPadding?: boolean;
+    hasTopPadding?: boolean;
+    hasBottomPadding?: boolean;
     topBorder?: boolean;
     bottomBorder?: boolean;
 }

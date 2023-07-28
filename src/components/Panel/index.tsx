@@ -9,6 +9,10 @@ export interface PanelProps {
   children?: React.ReactNode
   hasLeftRightPadding?: boolean
   hasTopBottomPadding?: boolean
+  hasLeftPadding?: boolean
+  hasRightPadding?: boolean
+  hasTopPadding?: boolean
+  hasBottomPadding?: boolean
   topBorder?: boolean
   bottomBorder?: boolean
 }
@@ -21,6 +25,12 @@ export const Panel = (props: PanelProps) => {
         props.className,
         props.hasLeftRightPadding && styles.leftRightPadding,
         props.hasTopBottomPadding && styles.topBottomPadding,
+
+        props.hasLeftPadding && styles.leftPadding,
+        props.hasRightPadding && styles.rightPadding,
+        props.hasTopPadding && styles.topPadding,
+        props.hasBottomPadding && styles.bottomPadding,
+
         props.topBorder && styles.topBorder,
         props.bottomBorder && styles.bottomBorder
       )}
