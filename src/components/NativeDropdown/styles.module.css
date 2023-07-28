@@ -37,10 +37,10 @@
   width: 100%;
   height: 30px;
   border-radius: var(--border-radius-2);
-  border: 1px solid transparent;
-  transition: all 0.1s ease-in-out;
+  border: 1px solid var(--figma-color-border);
   padding: 0 var(--space-extra-small);
-  border-color: var(--figma-color-border);
+  background-color: transparent;
+  transition: all 0.1s ease-in-out;
   /* background-color: rgba(70, 70, 70, 0.106); */
 
   /* font */
@@ -49,13 +49,6 @@
 
   /* other */
   appearance: none;
-  outline: none;
-}
-
-.dropdown:hover,
-.dropdown:focus {
-  justify-content: space-between;
-  border-color: var(--figma-color-border);
   outline: none;
 }
 
