@@ -11,17 +11,7 @@ interface ButtonProps {
     propagateEscapeKeyDown?: boolean;
     secondary?: boolean;
 }
-declare const Button: {
-    (props: ButtonProps): JSX.Element;
-    defaultProps: {
-        danger: boolean;
-        disabled: boolean;
-        fullWidth: boolean;
-        loading: boolean;
-        propagateEscapeKeyDown: boolean;
-        secondary: boolean;
-    };
-};
+declare const Button: (props: ButtonProps) => JSX.Element;
 
 interface LoadingIndicatorProps {
     className?: string;
@@ -49,15 +39,7 @@ interface PanelProps {
     topBorder?: boolean;
     bottomBorder?: boolean;
 }
-declare const Panel: {
-    (props: PanelProps): JSX.Element;
-    defaultProps: {
-        hasLeftRightPadding: boolean;
-        hasTopBottomPadding: boolean;
-        topBorder: boolean;
-        bottomBorder: boolean;
-    };
-};
+declare const Panel: (props: PanelProps) => JSX.Element;
 
 interface IconProps {
     className?: string;
@@ -88,21 +70,15 @@ type TextProps = {
 };
 type fontWeightType = 'regular' | 'bold';
 type TextAlignType = 'left' | 'center' | 'right';
-declare const Text: {
-    (props: TextProps): JSX.Element;
-    defaultProps: {
-        align: TextAlignType;
-        fontSize: number;
-        fontWeight: fontWeightType;
-    };
-};
+declare const Text: (props: TextProps) => JSX.Element;
 
+type stackDirectionType = 'row' | 'column';
 interface StackProps {
     className?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
     gap?: number | string;
-    direction?: 'row' | 'column';
+    direction?: stackDirectionType;
     hasLeftRightPadding?: boolean;
     hasTopBottomPadding?: boolean;
     hasLeftPadding?: boolean;
@@ -111,15 +87,7 @@ interface StackProps {
     hasBottomPadding?: boolean;
     onClick?: () => void;
 }
-declare const Stack: {
-    (props: StackProps): JSX.Element;
-    defaultProps: {
-        gap: number;
-        direction: string;
-        hasLeftRightPadding: boolean;
-        hasTopBottomPadding: boolean;
-    };
-};
+declare const Stack: (props: StackProps) => JSX.Element;
 
 type PanelHeaderProps = {
     className?: string;
@@ -141,12 +109,7 @@ interface CheckboxProps$1 {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Toggle: {
-    (props: CheckboxProps$1): JSX.Element;
-    defaultProps: {
-        checked: boolean;
-    };
-};
+declare const Toggle: (props: CheckboxProps$1) => JSX.Element;
 
 interface OptionProps {
     id: string;
@@ -207,12 +170,7 @@ interface CheckboxProps {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Checkbox: {
-    (props: CheckboxProps): JSX.Element;
-    defaultProps: {
-        checked: boolean;
-    };
-};
+declare const Checkbox: (props: CheckboxProps) => JSX.Element;
 
 interface InputProps {
     id?: string;
@@ -231,12 +189,7 @@ interface InputProps {
     onFocus?: (value: string) => void;
     onBlur?: (value: string) => void;
 }
-declare const Input: {
-    (props: InputProps): JSX.Element;
-    defaultProps: {
-        hasOutline: boolean;
-    };
-};
+declare const Input: (props: InputProps) => JSX.Element;
 
 interface TabsProps {
     className?: string;

@@ -1,6 +1,6 @@
 {
   "name": "react-figma-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Figma UI components for React",
   "scripts": {
     "build": "rimraf ui && rollup -c && cleancss -o ui/styles.css styles/global.css ui/ui.css",
@@ -38,6 +38,7 @@
     "prop-types": "^15.8.1",
     "react": "18",
     "react-dom": "18",
+    "rimraf": "^6.0.1",
     "rollup": "^2.75.6",
     "rollup-plugin-dts": "^4.2.1",
     "rollup-plugin-esbuild": "^5.0.0",
@@ -52,5 +53,6 @@
     "storybook-dark-mode": "^3.0.0",
     "style-loader": "^3.3.1",
     "typescript": "^4.7.3"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

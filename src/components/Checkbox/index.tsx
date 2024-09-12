@@ -13,7 +13,14 @@ export interface CheckboxProps {
   checked?: boolean
 }
 
+
+const defaultProps = {
+  checked: false
+}
+
 export const Checkbox = (props: CheckboxProps) => {
+  props = { ...defaultProps, ...props }
+
   const [checked, setChecked] = React.useState(props.checked)
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +69,3 @@ export const Checkbox = (props: CheckboxProps) => {
   )
 }
 
-Checkbox.defaultProps = {
-  checked: false
-}

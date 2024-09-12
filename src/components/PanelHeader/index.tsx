@@ -16,6 +16,10 @@ export type PanelHeaderProps = {
   iconButtons?: IconButtonProps[]
 }
 
+const defaultProps = {
+  isActive: false
+}
+
 const backIcon = (
   <svg
     className={styles.backIcon}
@@ -30,6 +34,8 @@ const backIcon = (
 
 export const PanelHeader = React.forwardRef<HTMLDivElement, PanelHeaderProps>(
   (props, ref) => {
+    props = { ...defaultProps, ...props }
+    
     const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
       event.stopPropagation()
       props.onClick && props.onClick()
@@ -72,7 +78,3 @@ export const PanelHeader = React.forwardRef<HTMLDivElement, PanelHeaderProps>(
 )
 
 PanelHeader.displayName = 'PanelHeader'
-
-PanelHeader.defaultProps = {
-  isActive: false
-}

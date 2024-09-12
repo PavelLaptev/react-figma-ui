@@ -17,7 +17,18 @@ export interface PanelProps {
   bottomBorder?: boolean
 }
 
+
+const defaultProps = {
+  hasLeftRightPadding: false,
+  hasTopBottomPadding: true,
+  topBorder: false,
+  bottomBorder: true
+}
+
+
 export const Panel = (props: PanelProps) => {
+  props = { ...defaultProps, ...props }
+  
   return (
     <div
       className={joinClassNames(
@@ -39,11 +50,4 @@ export const Panel = (props: PanelProps) => {
       {props.children}
     </div>
   )
-}
-
-Panel.defaultProps = {
-  hasLeftRightPadding: false,
-  hasTopBottomPadding: true,
-  topBorder: false,
-  bottomBorder: true
 }

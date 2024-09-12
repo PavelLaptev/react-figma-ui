@@ -16,7 +16,18 @@ export interface ButtonProps {
   secondary?: boolean
 }
 
+const defaultProps = {
+  danger: false,
+  disabled: false,
+  fullWidth: false,
+  loading: false,
+  propagateEscapeKeyDown: true,
+  secondary: false,
+}
+
 export const Button = (props: ButtonProps) => {
+  props = { ...defaultProps, ...props }
+
   return (
     <div
       className={joinClassNames(
@@ -49,13 +60,4 @@ export const Button = (props: ButtonProps) => {
       </button>
     </div>
   )
-}
-
-Button.defaultProps = {
-  danger: false,
-  disabled: false,
-  fullWidth: false,
-  loading: false,
-  propagateEscapeKeyDown: true,
-  secondary: false
 }

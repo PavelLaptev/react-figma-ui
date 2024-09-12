@@ -3,12 +3,14 @@ import React from 'react'
 import { joinClassNames } from '../../utils/joinClassNames'
 import styles from './styles.module.css'
 
+type stackDirectionType = 'row' | 'column'
+
 export interface StackProps {
   className?: string
   style?: React.CSSProperties
   children?: React.ReactNode
   gap?: number | string
-  direction?: 'row' | 'column'
+  direction?: stackDirectionType
   hasLeftRightPadding?: boolean
   hasTopBottomPadding?: boolean
   hasLeftPadding?: boolean
@@ -18,7 +20,17 @@ export interface StackProps {
   onClick?: () => void
 }
 
+const defaultProps = {
+  gap: 0,
+  direction: 'column' as stackDirectionType,
+  hasLeftRightPadding: true,
+  hasTopBottomPadding: false
+}
+
+
 export const Stack = (props: StackProps) => {
+  props = { ...defaultProps, ...props }
+
   return (
     <div
       className={joinClassNames(
@@ -41,11 +53,4 @@ export const Stack = (props: StackProps) => {
       {props.children}
     </div>
   )
-}
-
-Stack.defaultProps = {
-  gap: 0,
-  direction: 'column',
-  hasLeftRightPadding: true,
-  hasTopBottomPadding: false
 }

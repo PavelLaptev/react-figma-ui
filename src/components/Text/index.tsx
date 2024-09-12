@@ -16,7 +16,15 @@ export type fontWeightType = 'regular' | 'bold'
 
 type TextAlignType = 'left' | 'center' | 'right'
 
+const defaultProps = {
+  align: 'left' as TextAlignType,
+  fontSize: 11,
+  fontWeight: 'regular' as fontWeightType
+}
+
 export const Text = (props: TextProps) => {
+  props = { ...defaultProps, ...props }
+  
   return (
     <span
       className={joinClassNames(
@@ -33,10 +41,4 @@ export const Text = (props: TextProps) => {
       {props.children}
     </span>
   )
-}
-
-Text.defaultProps = {
-  align: 'left' as TextAlignType,
-  fontSize: 11,
-  fontWeight: 'regular' as fontWeightType
 }

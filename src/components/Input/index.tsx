@@ -23,7 +23,13 @@ export interface InputProps {
   onBlur?: (value: string) => void
 }
 
+const defaultProps = {
+  hasOutline: true
+}
+
 export const Input = (props: InputProps) => {
+  props = { ...defaultProps, ...props }
+  
   const [value, setValue] = React.useState(props.value)
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,6 +86,4 @@ export const Input = (props: InputProps) => {
   )
 }
 
-Input.defaultProps = {
-  hasOutline: true
-}
+
