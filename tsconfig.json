@@ -12,10 +12,11 @@
     "module": "ESNext",
     "declaration": true,
     "sourceMap": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "resolveJsonModule": true,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "ignoreDeprecations": "6.0"
   }
 }
