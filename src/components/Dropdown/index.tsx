@@ -25,13 +25,15 @@ export const Dropdown = (props: DropdownProps) => {
   const [isOpened, setIsOpened] = React.useState(false)
 
   const findLabelById = (id: string) => {
-    const label = props.optionsSections
-      .map((section) => section.options)
-      .flat()
+    for (const section of props.optionsSections) {
+      const option = section.options.find((item) => item.id === id)
 
-      .find((option) => option.id === id)?.label
+      if (option) {
+        return option.label
+      }
+    }
 
-    return label
+    return undefined
   }
 
   const handleToggle = () => {
@@ -41,7 +43,7 @@ export const Dropdown = (props: DropdownProps) => {
   React.useEffect(() => {
     if (props.value) {
       const label = findLabelById(props.value)
-      setValue(label)
+      setValue(label || '')
     }
 
     if (!props.value) {

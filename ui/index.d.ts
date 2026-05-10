@@ -11,20 +11,20 @@ interface ButtonProps {
     propagateEscapeKeyDown?: boolean;
     secondary?: boolean;
 }
-declare const Button: (props: ButtonProps) => JSX.Element;
+declare const Button: (props: ButtonProps) => React.JSX.Element;
 
 interface LoadingIndicatorProps {
     className?: string;
     styles?: React.CSSProperties;
 }
-declare const LoadingIndicator: (props: LoadingIndicatorProps) => JSX.Element;
+declare const LoadingIndicator: (props: LoadingIndicatorProps) => React.JSX.Element;
 
 interface DividerProps {
     className?: string;
     style?: React.CSSProperties;
     isDashed?: boolean;
 }
-declare const Divider: (props: DividerProps) => JSX.Element;
+declare const Divider: (props: DividerProps) => React.JSX.Element;
 
 interface PanelProps {
     className?: string;
@@ -39,7 +39,7 @@ interface PanelProps {
     topBorder?: boolean;
     bottomBorder?: boolean;
 }
-declare const Panel: (props: PanelProps) => JSX.Element;
+declare const Panel: (props: PanelProps) => React.JSX.Element;
 
 interface IconProps {
     className?: string;
@@ -48,7 +48,7 @@ interface IconProps {
     size: '32' | '16';
     customIcon?: React.ReactNode;
 }
-declare const Icon: (props: IconProps) => JSX.Element;
+declare const Icon: (props: IconProps) => React.JSX.Element;
 
 type IconButtonProps = {
     className?: string;
@@ -58,7 +58,7 @@ type IconButtonProps = {
     isActive?: boolean;
     propagateEscapeKeyDown?: boolean;
 };
-declare const IconButton: (props: IconButtonProps) => JSX.Element;
+declare const IconButton: (props: IconButtonProps) => React.JSX.Element;
 
 type TextProps = {
     className?: string;
@@ -70,7 +70,7 @@ type TextProps = {
 };
 type fontWeightType = 'regular' | 'bold';
 type TextAlignType = 'left' | 'center' | 'right';
-declare const Text: (props: TextProps) => JSX.Element;
+declare const Text: (props: TextProps) => React.JSX.Element;
 
 type stackDirectionType = 'row' | 'column';
 interface StackProps {
@@ -87,7 +87,7 @@ interface StackProps {
     hasBottomPadding?: boolean;
     onClick?: () => void;
 }
-declare const Stack: (props: StackProps) => JSX.Element;
+declare const Stack: (props: StackProps) => React.JSX.Element;
 
 type PanelHeaderProps = {
     className?: string;
@@ -109,7 +109,7 @@ interface CheckboxProps$1 {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Toggle: (props: CheckboxProps$1) => JSX.Element;
+declare const Toggle: (props: CheckboxProps$1) => React.JSX.Element;
 
 interface OptionProps {
     id: string;
@@ -131,7 +131,7 @@ interface OverlayListProps {
     trigger?: HTMLElement;
     maxHeight?: number;
 }
-declare const OverlayList: (props: OverlayListProps) => JSX.Element;
+declare const OverlayList: (props: OverlayListProps) => React.JSX.Element;
 
 interface DropdownProps {
     label?: string;
@@ -144,7 +144,7 @@ interface DropdownProps {
     inputGreed?: number;
     maxHeight?: number;
 }
-declare const Dropdown: (props: DropdownProps) => JSX.Element;
+declare const Dropdown: (props: DropdownProps) => React.JSX.Element;
 
 interface NativeDropdownProps {
     label?: string;
@@ -159,7 +159,7 @@ interface NativeDropdownProps {
     labelGreed?: number;
     inputGreed?: number;
 }
-declare const NativeDropdown: (props: NativeDropdownProps) => JSX.Element;
+declare const NativeDropdown: (props: NativeDropdownProps) => React.JSX.Element;
 
 interface CheckboxProps {
     className?: string;
@@ -170,7 +170,7 @@ interface CheckboxProps {
     disabled?: boolean;
     checked?: boolean;
 }
-declare const Checkbox: (props: CheckboxProps) => JSX.Element;
+declare const Checkbox: (props: CheckboxProps) => React.JSX.Element;
 
 interface InputProps {
     id?: string;
@@ -189,7 +189,7 @@ interface InputProps {
     onFocus?: (value: string) => void;
     onBlur?: (value: string) => void;
 }
-declare const Input: (props: InputProps) => JSX.Element;
+declare const Input: (props: InputProps) => React.JSX.Element;
 
 interface TabsProps {
     className?: string;
@@ -202,7 +202,7 @@ interface TabsProps {
     onChange?: (value: string) => void;
     iconButtons?: IconButtonProps[];
 }
-declare const Tabs: (props: TabsProps) => JSX.Element;
+declare const Tabs: (props: TabsProps) => React.JSX.Element;
 
 interface ToggleRowProps {
     id: string;
@@ -211,6 +211,6 @@ interface ToggleRowProps {
     checked?: boolean;
     onChange?: (value: boolean) => void;
 }
-declare const ToggleRow: (props: ToggleRowProps) => JSX.Element;
+declare const ToggleRow: (props: ToggleRowProps) => React.JSX.Element;
 
 export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, NativeDropdown, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle, ToggleRow };
