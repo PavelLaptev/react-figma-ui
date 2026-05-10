@@ -138,6 +138,7 @@ interface DropdownProps {
     id?: string;
     className?: string;
     value?: string;
+    leftIcon?: React.ReactNode;
     optionsSections: SectionProps[];
     onChange: (value: string) => void;
     labelGreed?: number;

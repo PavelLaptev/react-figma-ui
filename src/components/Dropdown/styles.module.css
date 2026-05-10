@@ -36,6 +36,22 @@
   transition: all 0.1s ease-in-out;
 }
 
+.hasLeftIcon {
+  padding-left: 32px;
+}
+
+.leftIcon {
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dropdown:hover,
 .dropdown:focus {
   justify-content: space-between;

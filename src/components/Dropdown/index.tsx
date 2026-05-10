@@ -13,6 +13,7 @@ export interface DropdownProps {
   id?: string
   className?: string
   value?: string
+  leftIcon?: React.ReactNode
   optionsSections: SectionProps[]
   onChange: (value: string) => void
   labelGreed?: number
@@ -92,7 +93,16 @@ export const Dropdown = (props: DropdownProps) => {
             }}
           />
         )}
-        <div className={styles.dropdown} onClick={handleToggle}>
+        <div
+          className={joinClassNames(
+            styles.dropdown,
+            props.leftIcon && styles.hasLeftIcon
+          )}
+          onClick={handleToggle}
+        >
+          {props.leftIcon && (
+            <div className={styles.leftIcon}>{props.leftIcon}</div>
+          )}
           <Text>{value}</Text>
           <svg
             width='8'
