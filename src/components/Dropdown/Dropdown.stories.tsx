@@ -115,3 +115,30 @@ export const ReactiveSelected: Story = {
     )
   }
 }
+
+export const ActionsMenu: Story = {
+  args: {
+    label: 'Actions',
+    onChange: (id) => {
+      console.log(`Action clicked: ${id}`)
+    },
+    optionsSections: [
+      {
+        options: [
+          {
+            id: 'duplicate',
+            label: 'Duplicate'
+          },
+          {
+            id: 'rename',
+            label: 'Rename'
+          },
+          {
+            id: 'delete',
+            label: 'Delete'
+          }
+        ]
+      }
+    ]
+  }
+}

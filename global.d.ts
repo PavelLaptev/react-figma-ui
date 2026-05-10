@@ -1,5 +1,5 @@
 import icon32 from './src/components/Icon/icons32.json'
-import icon16 from './src/components/Icon/icons32.json'
+import icon16 from './src/components/Icon/icons16.json'
 
 declare global {
   type Icon32Type = keyof typeof icon32

@@ -32,8 +32,18 @@ export interface OverlayListProps {
 
 export const OverlayList = (props: OverlayListProps) => {
   const dropdownRef = React.useRef<HTMLDivElement>(null)
+  const hasOptionsWithIcons = props.optionsSections.some((section) =>
+    section.options.some((option) => Boolean(option.icon))
+  )
+  const shouldRenderLeftSlot = Boolean(
+    props.hasShift || props.selected || hasOptionsWithIcons
+  )
 
   const handleOptionLeftContent = (option: OptionProps) => {
+    if (!shouldRenderLeftSlot) {
+      return null
+    }
+
     if (props.selected === option.id) {
       return (
         <div className={styles.optionIcon}>
@@ -46,11 +56,7 @@ export const OverlayList = (props: OverlayListProps) => {
       return <div className={styles.optionIcon}>{option.icon}</div>
     }
 
-    if (!option.icon) {
-      return <div className={styles.optionIcon} />
-    }
-
-    return null
+    return <div className={styles.optionIcon} />
   }
 
   useEffect(() => {
@@ -97,7 +103,7 @@ export const OverlayList = (props: OverlayListProps) => {
         <Fragment key={i}>
           {section.title && (
             <div className={styles.sectionTitleContainer}>
-              {props.hasShift && <div className={styles.optionIcon} />}
+              {shouldRenderLeftSlot && <div className={styles.optionIcon} />}
               <Text className={styles.sectionTitle} fontSize={11}>
                 {section.title}
               </Text>
