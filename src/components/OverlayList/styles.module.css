@@ -40,8 +40,12 @@
     flex: 1;
   }
 
+  .optionSelectedIcon {
+    color: var(--figma-color-icon-menu);
+  }
+
   .optionLabel {
-    padding-left: var(--space-extra-small);
+    padding-left: calc(var(--space-extra-small) / 2);
     color: var(--figma-color-text-menu);
   }
 

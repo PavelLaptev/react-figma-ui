@@ -126,6 +126,7 @@ interface OverlayListProps {
     className?: string;
     style?: React.CSSProperties;
     optionsSections: SectionProps[];
+    selected?: string;
     onClick: (id: string) => void;
     onOutsideClick?: () => void;
     trigger?: HTMLElement;
@@ -138,6 +139,7 @@ interface DropdownProps {
     id?: string;
     className?: string;
     value?: string;
+    selected?: string;
     leftIcon?: React.ReactNode;
     optionsSections: SectionProps[];
     onChange: (value: string) => void;

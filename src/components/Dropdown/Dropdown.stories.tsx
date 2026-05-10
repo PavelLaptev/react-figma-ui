@@ -77,3 +77,41 @@ export const WithIcon: Story = {
     ]
   }
 }
+
+export const ReactiveSelected: Story = {
+  render: () => {
+    const [selected, setSelected] = React.useState('twitter')
+
+    return (
+      <Dropdown
+        label='Social'
+        selected={selected}
+        onChange={(id) => {
+          setSelected(id)
+        }}
+        optionsSections={[
+          {
+            options: [
+              {
+                id: 'github',
+                label: 'GitHub'
+              },
+              {
+                id: 'twitter',
+                label: 'Twitter'
+              },
+              {
+                id: 'linkedin',
+                label: 'LinkedIn'
+              },
+              {
+                id: 'facebook',
+                label: 'Facebook'
+              }
+            ]
+          }
+        ]}
+      />
+    )
+  }
+}

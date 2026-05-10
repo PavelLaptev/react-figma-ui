@@ -13,6 +13,7 @@ export interface DropdownProps {
   id?: string
   className?: string
   value?: string
+  selected?: string
   leftIcon?: React.ReactNode
   optionsSections: SectionProps[]
   onChange: (value: string) => void
@@ -24,6 +25,7 @@ export interface DropdownProps {
 export const Dropdown = (props: DropdownProps) => {
   const [value, setValue] = React.useState('')
   const [isOpened, setIsOpened] = React.useState(false)
+  const selectedOptionId = props.selected ?? props.value
 
   const findLabelById = (id: string) => {
     for (const section of props.optionsSections) {
@@ -42,15 +44,14 @@ export const Dropdown = (props: DropdownProps) => {
   }
 
   React.useEffect(() => {
-    if (props.value) {
-      const label = findLabelById(props.value)
+    if (selectedOptionId) {
+      const label = findLabelById(selectedOptionId)
       setValue(label || '')
+      return
     }
 
-    if (!props.value) {
-      setValue(props.optionsSections[0].options[0].label)
-    }
-  }, [props.value])
+    setValue(props.optionsSections[0]?.options[0]?.label || '')
+  }, [selectedOptionId, props.optionsSections])
 
   return (
     <div
@@ -82,9 +83,10 @@ export const Dropdown = (props: DropdownProps) => {
             maxHeight={props.maxHeight}
             className={styles.overlayList}
             optionsSections={props.optionsSections}
+            selected={selectedOptionId}
             onClick={(id) => {
               const label = findLabelById(id)
-              setValue(label)
+              setValue(label || '')
               handleToggle()
               props.onChange(id)
             }}

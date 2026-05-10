@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 
+import { Icon } from '../Icon'
 import { Text } from '../Text'
 
 import { joinClassNames } from '../../utils/joinClassNames'
@@ -22,6 +23,7 @@ export interface OverlayListProps {
   className?: string
   style?: React.CSSProperties
   optionsSections: SectionProps[]
+  selected?: string
   onClick: (id: string) => void
   onOutsideClick?: () => void
   trigger?: HTMLElement
@@ -32,14 +34,20 @@ export const OverlayList = (props: OverlayListProps) => {
   const dropdownRef = React.useRef<HTMLDivElement>(null)
 
   const handleOptionLeftContent = (option: OptionProps) => {
+    if (props.selected === option.id) {
+      return (
+        <div className={styles.optionIcon}>
+          <Icon className={styles.optionSelectedIcon} name='tick' size='16' />
+        </div>
+      )
+    }
+
     if (option.icon) {
       return <div className={styles.optionIcon}>{option.icon}</div>
     }
 
     if (!option.icon) {
-      if (props.hasShift) {
-        return <div className={styles.optionIcon} />
-      }
+      return <div className={styles.optionIcon} />
     }
 
     return null
