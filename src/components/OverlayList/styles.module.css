@@ -50,7 +50,7 @@
   }
 
   .optionCaption {
-    color: var(--figma-color-text-menu-secondary);
+    color: var(--figma-color-text-menu-tertiary);
     text-align: right;
   }
 
