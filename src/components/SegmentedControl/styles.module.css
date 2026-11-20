@@ -1,0 +1,51 @@
+.segmentedControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 24px;
+  padding: 2px;
+  border-radius: var(--border-radius-6);
+  background-color: var(--figma-color-bg);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.label {
+  color: var(--figma-color-text-secondary);
+}
+
+.option:not(:disabled):not(.selected):hover {
+  background-color: var(--figma-color-bg-hover);
+}
+
+.option:focus-visible {
+  outline: 1px solid var(--figma-color-border-selected);
+  outline-offset: -1px;
+}
+
+.option:disabled {
+  cursor: not-allowed;
+}
+
+.option:disabled .label {
+  color: var(--figma-color-text-disabled);
+}
+
+/* SELECTED */
+
+.selected {
+  background-color: var(--figma-color-bg-tertiary);
+  cursor: default;
+}
+
+.selected .label {
+  color: var(--figma-color-text);
+}

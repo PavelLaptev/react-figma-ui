@@ -216,4 +216,27 @@ interface ToggleRowProps {
 }
 declare const ToggleRow: (props: ToggleRowProps) => React.JSX.Element;
 
-export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, NativeDropdown, OverlayList, Panel, PanelHeader, Stack, Tabs, Text, Toggle, ToggleRow };
+interface SegmentedControlOption {
+    value: string;
+    label: React.ReactNode;
+    /** Tooltip of the option */
+    title?: string;
+    disabled?: boolean;
+}
+interface SegmentedControlProps {
+    className?: string;
+    style?: React.CSSProperties;
+    /** The selected option. The parent owns it, so a change shows at once */
+    value: string;
+    options: SegmentedControlOption[];
+    onChange?: (value: string) => void;
+    /** Names the group for screen readers */
+    'aria-label'?: string;
+}
+/**
+ * A row of options of which exactly one is selected. Built as a radio group:
+ * Tab reaches the selected option, the arrow keys move the selection.
+ */
+declare const SegmentedControl: (props: SegmentedControlProps) => React.JSX.Element;
+
+export { Button, Checkbox, Divider, Dropdown, Icon, IconButton, Input, LoadingIndicator, NativeDropdown, OverlayList, Panel, PanelHeader, SegmentedControl, Stack, Tabs, Text, Toggle, ToggleRow };
