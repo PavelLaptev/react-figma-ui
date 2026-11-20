@@ -18,23 +18,8 @@
   cursor: pointer;
 }
 
-/* the label and its hidden bold copy share one cell, so the option is as
-   wide as the bold label */
-.labelStack {
-  display: grid;
-}
-
-.labelStack > * {
-  grid-area: 1 / 1;
-}
-
 .label {
   color: var(--figma-color-text-secondary);
-  text-align: center;
-}
-
-.labelSizer {
-  visibility: hidden;
 }
 
 .option:not(:disabled):not(.selected):hover {
@@ -63,5 +48,4 @@
 
 .selected .label {
   color: var(--figma-color-text);
-  font-weight: var(--font-weight-bold);
 }

@@ -87,14 +87,7 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
             title={option.title}
             onClick={() => select(option.value)}
           >
-            {/* A hidden bold copy holds the width of the selected look, so
-                switching doesn't shift the options */}
-            <span className={styles.labelStack}>
-              <Text className={styles.label}>{option.label}</Text>
-              <span className={styles.labelSizer} aria-hidden>
-                <Text fontWeight='bold'>{option.label}</Text>
-              </span>
-            </span>
+            <Text className={styles.label}>{option.label}</Text>
           </button>
         )
       })}
