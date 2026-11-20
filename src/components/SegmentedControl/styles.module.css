@@ -57,7 +57,7 @@
 /* SELECTED */
 
 .selected {
-  background-color: var(--figma-color-bg-tertiary);
+  background-color: var(--figma-color-bg-selected);
   cursor: default;
 }
 
